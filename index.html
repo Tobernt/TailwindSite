@@ -12,59 +12,88 @@
   <div data-site-header></div>
 
   <main class="max-w-6xl mx-auto px-6">
-    <section id="hero" class="py-20 border-b border-neutral-800">
-      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+    <section id="hero" class="section-shell relative overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-grid-slate bg-[length:22px_22px] opacity-30"></div>
+      <div class="absolute inset-0 -z-10 bg-radial-spot"></div>
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div class="space-y-6">
-          <p class="text-emerald-300 text-sm font-semibold uppercase tracking-wide">Fullstackutvecklare & problemlösare</p>
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Hej! Jag heter Alex och bygger tillgängliga digitala upplevelser.</h1>
-          <p class="text-lg text-neutral-300">Jag hjälper team att gå från idé till driftsatt lösning med automationsflöden, API-integrationer och transparent kommunikation.</p>
+          <p class="eyebrow">Fullstackutvecklare & problemlösare</p>
+          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Jag bygger tillgängliga produkter som levererar mätbar effekt.
+          </h1>
+          <p class="text-lg text-neutral-300">
+            Från discovery till drift: jag hjälper team att ta fram robusta komponentbibliotek, automatisera leveranser och
+            visualisera resultat för affären.
+          </p>
           <div class="flex flex-wrap items-center gap-4">
-            <a class="inline-flex items-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300" href="#contact">Boka ett kort samtal</a>
-            <a class="inline-flex items-center rounded-full border border-emerald-300 px-5 py-3 text-sm font-semibold text-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-300/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Se hur jag jobbar i UI-galleriet</a>
+            <a class="cta-button-primary" href="#contact">Boka ett kort samtal</a>
+            <a class="cta-button-ghost" href="gallery.html">Utforska UI-galleriet</a>
           </div>
-          <div class="flex flex-wrap gap-6 text-sm text-neutral-400">
-            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span> Stockholm, Sverige</div>
-            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-blue-500"></span> Tillgänglig för konsultuppdrag</div>
+          <div class="flex flex-wrap gap-4 text-sm text-neutral-300">
+            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Stockholm</span>
+            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100">Tillgänglig för uppdrag</span>
+            <span class="pill border-neutral-700 bg-neutral-800/70">Remote-first</span>
           </div>
         </div>
-        <div class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-8 shadow-xl shadow-blue-500/10">
-          <p class="text-sm uppercase tracking-[0.25em] text-neutral-400">Fokusområden</p>
-          <ul class="mt-4 space-y-3 text-neutral-200">
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> Automatisering av arbetsflöden och data-pipelines</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span> Fullstack i TypeScript, Python och C#</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> UX-samarbete och komponentbibliotek i Tailwind</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span> Integrationer mot tredjeparts-API:er och moln</li>
-          </ul>
+        <div class="grid gap-4">
+          <div class="card-panel space-y-3">
+            <p class="text-sm font-semibold text-neutral-100">Fokusområden</p>
+            <ul class="space-y-2 text-neutral-200">
+              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Design systems i
+                Tailwind med audit-spår och dokumentation.</li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>Data pipelines med
+                kontraktstester, observability och rollback-planer.</li>
+              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Produktledda
+                experiment med tydliga KPI:er och insiktsdashboards.</li>
+            </ul>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-emerald-500/30 bg-emerald-400/10 px-4 py-3 shadow-glow-emerald">
+              <p class="text-2xl font-bold text-emerald-200">-50%</p>
+              <p class="text-xs text-emerald-50/80">Time-to-delivery genom CI/CD och koddelning.</p>
+            </div>
+            <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-3 shadow-glow-blue">
+              <p class="text-2xl font-bold text-blue-100">99%</p>
+              <p class="text-xs text-blue-50/80">Datakvalitet i produktionspipelines.</p>
+            </div>
+            <div class="rounded-xl border border-neutral-700 bg-neutral-900/80 px-4 py-3">
+              <p class="text-2xl font-bold text-neutral-50">24/7</p>
+              <p class="text-xs text-neutral-300">Observability och larmkedjor på plats.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="py-16 border-b border-neutral-800">
+    <section id="about" class="section-shell">
       <div class="grid gap-8 lg:grid-cols-3 lg:items-start">
-        <div class="lg:col-span-1">
-          <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Profil</p>
+        <div class="lg:col-span-1 space-y-2">
+          <p class="eyebrow">Profil</p>
           <h2 class="text-3xl font-bold text-white">Om mig</h2>
-          <p class="mt-3 text-neutral-400">Nyfiken generalist som bygger robusta system och gör teknik begriplig för team och kunder.</p>
+          <p class="text-neutral-300">Nyfiken generalist som trivs i gränslandet mellan produkt, data och design.</p>
         </div>
         <div class="lg:col-span-2 space-y-4">
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-lg shadow-neutral-900/40">
-            <p class="text-neutral-200">Med bakgrund inom produktutveckling, data och UX facilitation hjälper jag team att leverera snabba proof-of-concepts som kan skalas. Jag arbetar gärna iterativt, med fokus på tydliga mål och mätbara effekter.</p>
+          <div class="card-panel">
+            <p class="text-neutral-200">
+              Jag leder arbetet från problemkartläggning till leverans. Parprogrammerar gärna, skriver dokumentation som andra vill läsa och
+              säkerställer att besluten speglas i kodbasen. Fokus ligger på förutsägbarhet, mätbarhet och en trevlig utvecklarupplevelse.
+            </p>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4 space-y-2">
               <p class="text-sm font-semibold text-neutral-100">Styrkor</p>
-              <ul class="mt-2 space-y-2 text-sm text-neutral-300">
-                <li>Snabba experiment och MVP:er</li>
-                <li>Kommunikation mellan tech och verksamhet</li>
-                <li>Mentorskap och pairing</li>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li>Snabba experiment & MVP:er med tydlig KPI.</li>
+                <li>Översätter komplex teknik till beslutsunderlag.</li>
+                <li>Mentorskap, pairing och code review-ritualer.</li>
               </ul>
             </div>
-            <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4 space-y-2">
               <p class="text-sm font-semibold text-neutral-100">Verktyg</p>
-              <ul class="mt-2 space-y-2 text-sm text-neutral-300">
-                <li>GitHub, Linear, Figma</li>
-                <li>Azure, AWS, Docker</li>
-                <li>PostgreSQL, Redis, Supabase</li>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li>GitHub Actions, Azure/AWS, Docker & k8s.</li>
+                <li>Supabase, PostgreSQL, Redis, OpenSearch.</li>
+                <li>Figma, Linear, Notion för tydlig spårbarhet.</li>
               </ul>
             </div>
           </div>
@@ -72,76 +101,77 @@
       </div>
     </section>
 
-    <section id="experience" class="py-16 border-b border-neutral-800">
+    <section id="experience" class="section-shell">
       <div class="flex flex-col gap-6">
-        <div class="flex items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Erfarenhet</p>
+            <p class="eyebrow">Erfarenhet</p>
             <h2 class="text-3xl font-bold text-white">Roller & resultat</h2>
+            <p class="text-sm text-neutral-400">Mätbara effekter på leveransflöden, kostnad och kvalitet.</p>
           </div>
           <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Se UI-exempel</a>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
+          <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
               <span class="font-semibold text-neutral-200">Lead Developer, WeTeachIT</span>
               <span>2023–</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Skalade kursplattform med modulära komponenter och CI/CD.</li>
-              <li>Halverade time-to-delivery genom automatiserade tester.</li>
+              <li>Skalade kursplattform med modulära komponenter och CI/CD → 50% kortare lead time.</li>
+              <li>Införde accessibla UI-paket och mörkt läge utan regressionsbuggar.</li>
             </ul>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
+          <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
               <span class="font-semibold text-neutral-200">Data Engineer, Nielsen/Gracenote</span>
               <span>2020–2023</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Byggde pipelines för metadata med >99% datakvalitet.</li>
-              <li>Designade dashboards som ökade insikter för produktteam.</li>
+              <li>Byggde pipelines för metadata med >99% datakvalitet och SLO:er.</li>
+              <li>Dashboards för produktteam ökade självservice och minskade supportärenden.</li>
             </ul>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
+          <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
               <span class="font-semibold text-neutral-200">Consultant, Cognizant</span>
               <span>2018–2020</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
               <li>Automatiserade rapportflöden och minskade manuella steg med 40%.</li>
-              <li>Faciliterade workshops mellan utveckling och affär.</li>
+              <li>Faciliterade workshops mellan utveckling och affär för snabbare beslut.</li>
             </ul>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
+          <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
               <span class="font-semibold text-neutral-200">Engineer, Tech Mahindra</span>
               <span>2015–2018</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
               <li>Utvecklade microservices och förbättrade svarstider med 30%.</li>
-              <li>Ledde kunskapsdelning inom testautomation.</li>
+              <li>Ledde kunskapsdelning inom testautomation och release-processer.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="education" class="py-16 border-b border-neutral-800">
+    <section id="education" class="section-shell">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
         <div class="space-y-3">
-          <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Utbildning & färdigheter</p>
+          <p class="eyebrow">Utbildning & färdigheter</p>
           <h2 class="text-3xl font-bold text-white">Lifelong learning</h2>
-          <p class="text-neutral-300">Fokus på moderna verktyg, molnplattformar och samarbeten över teamgränser.</p>
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
+          <p class="text-neutral-300">Jag håller verktygslådan uppdaterad och dokumenterar lärdomar så att teamet slipper gissa.</p>
+          <div class="card-panel">
             <p class="text-sm font-semibold text-neutral-100">YH-examen, Fullstack</p>
             <p class="text-sm text-neutral-400">Teknikhögskolan, 400 YH-poäng</p>
-            <p class="mt-2 text-sm text-neutral-300">Examensprojekt kring realtidsdata och tillgänglighetsförbättringar.</p>
+            <p class="mt-2 text-sm text-neutral-300">Examensprojekt kring realtidsdata och tillgänglighetsförbättringar i design-system.</p>
           </div>
         </div>
         <div class="space-y-4">
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 space-y-3">
             <p class="text-sm font-semibold text-neutral-100">Teknikstack</p>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs text-emerald-200">
+            <div class="flex flex-wrap gap-2 text-xs text-emerald-200">
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">TypeScript</span>
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">Python</span>
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">C#</span>
@@ -149,80 +179,111 @@
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">Tailwind</span>
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">SQL</span>
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">Docker</span>
+              <span class="rounded-full border border-emerald-400/50 px-3 py-1">Supabase</span>
             </div>
           </div>
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 space-y-3">
             <p class="text-sm font-semibold text-neutral-100">Verktyg & metoder</p>
-            <div class="mt-3 grid grid-cols-2 gap-3 text-sm text-neutral-300">
+            <div class="grid grid-cols-2 gap-3 text-sm text-neutral-300">
               <span>CI/CD & DevOps</span>
               <span>Design systems</span>
               <span>Agila arbetssätt</span>
               <span>Observability</span>
+              <span>DX audits</span>
+              <span>A/B-testning</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="py-16 border-b border-neutral-800">
+    <section id="projects" class="section-shell">
       <div class="flex flex-col gap-6">
-        <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Projekt</p>
+            <p class="eyebrow">Projekt</p>
             <h2 class="text-3xl font-bold text-white">Utvalda case</h2>
+            <p class="text-sm text-neutral-400">Case med både resultat och kodbeskrivningar.</p>
           </div>
           <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Mer UI-inspiration</a>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
-            <h3 class="text-xl font-semibold text-white">AI video-generator</h3>
-            <p class="mt-2 text-sm text-neutral-300">Multimodal modell som automatiserar storyboard och voice-over.</p>
-            <p class="mt-2 text-xs text-neutral-500">Stack: Python, FastAPI, Tailwind</p>
+          <article class="card-panel space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-white">AI video-generator</h3>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Produkt</span>
+            </div>
+            <p class="text-sm text-neutral-300">Multimodal modell som automatiserar storyboard och voice-over med mänsklig feedback-loop.</p>
+            <p class="text-xs text-neutral-400">Stack: Python, FastAPI, Tailwind</p>
+            <p class="text-sm text-emerald-200">Resultat: 3x snabbare produktionscykler, mätbar NPS-ökning.</p>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
-            <h3 class="text-xl font-semibold text-white">Day Trading App</h3>
-            <p class="mt-2 text-sm text-neutral-300">Signalbaserad strategi med realtidsnotifieringar och simulering.</p>
-            <p class="mt-2 text-xs text-neutral-500">Stack: TypeScript, Supabase, React</p>
+          <article class="card-panel space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-white">Day Trading App</h3>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Realtime</span>
+            </div>
+            <p class="text-sm text-neutral-300">Signalbaserad strategi med realtidsnotifieringar, backtesting och sandlåda.</p>
+            <p class="text-xs text-neutral-400">Stack: TypeScript, Supabase, React</p>
+            <p class="text-sm text-emerald-200">Resultat: 35% lägre driftkostnad via smarta index och caching.</p>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
-            <h3 class="text-xl font-semibold text-white">Multiplayer Game Architecture</h3>
-            <p class="mt-2 text-sm text-neutral-300">Skalbar serverdesign och prediktiv klientlogik för låg latency.</p>
-            <p class="mt-2 text-xs text-neutral-500">Stack: C#, SignalR, Redis</p>
+          <article class="card-panel space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-white">Multiplayer Game Architecture</h3>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Scale</span>
+            </div>
+            <p class="text-sm text-neutral-300">Skalbar serverdesign och prediktiv klientlogik för låg latency.</p>
+            <p class="text-xs text-neutral-400">Stack: C#, SignalR, Redis</p>
+            <p class="text-sm text-emerald-200">Resultat: 30% förbättrad respons tid & färre disconnects.</p>
           </article>
-          <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-lg shadow-neutral-900/40">
-            <h3 class="text-xl font-semibold text-white">Android-spel</h3>
-            <p class="mt-2 text-sm text-neutral-300">Arkadspel med intuitiva kontroller och inbyggd analytics.</p>
-            <p class="mt-2 text-xs text-neutral-500">Stack: Kotlin, Firebase</p>
+          <article class="card-panel space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-white">Android-spel</h3>
+              <span class="pill border-neutral-700">Mobile</span>
+            </div>
+            <p class="text-sm text-neutral-300">Arkadspel med intuitiva kontroller, analytics och serverless backend.</p>
+            <p class="text-xs text-neutral-400">Stack: Kotlin, Firebase</p>
+            <p class="text-sm text-emerald-200">Resultat: +15% retention via iterativ UI-testning.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="py-16">
-      <div class="grid gap-6 rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20 sm:grid-cols-2 sm:items-center">
-        <div class="space-y-3">
-          <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Nästa steg</p>
+    <section id="contact" class="py-section">
+      <div class="grid gap-8 rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div class="space-y-4">
+          <p class="eyebrow">Nästa steg</p>
           <h2 class="text-3xl font-bold text-white">Redo att börja ett projekt?</h2>
-          <p class="text-neutral-300">Låt oss prata om automationsidéer, komponentbibliotek eller hur vi kan skala ditt team utan att tappa tempot.</p>
+          <p class="text-neutral-300">Boka en genomgång av dina utmaningar eller be om en liten prototyp. Jag återkommer inom en arbetsdag.</p>
           <div class="flex flex-wrap gap-3">
-            <a class="inline-flex items-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300" href="mailto:contact@example.com">Boka en genomgång</a>
-            <a class="inline-flex items-center rounded-full border border-emerald-300 px-5 py-3 text-sm font-semibold text-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-300/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Utforska lösningar i galleriet</a>
+            <a class="cta-button-primary" href="mailto:contact@example.com">Boka en genomgång</a>
+            <a class="cta-button-ghost" href="gallery.html">Utforska lösningar i galleriet</a>
+          </div>
+          <div class="flex flex-wrap gap-3 text-xs text-neutral-400">
+            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Tillgänglig för workshop</span>
+            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100">Svar inom 24h</span>
+            <span class="pill">Inkl. inspelad demo</span>
           </div>
         </div>
-        <div class="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 text-sm text-neutral-300">
+        <form class="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6" id="contact-form" novalidate>
           <div class="flex items-center justify-between">
-            <span>Responsivt</span>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">Mobile-first</span>
+            <p class="text-sm font-semibold text-neutral-100">Kontaktformulär</p>
+            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">WCAG testat</span>
           </div>
-          <div class="flex items-center justify-between">
-            <span>Tillgängligt</span>
-            <span class="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-200">WCAG fokus</span>
+          <label class="block text-sm text-neutral-200" for="name">Namn
+            <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="name" name="name" required />
+          </label>
+          <label class="block text-sm text-neutral-200" for="email">E-post
+            <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="email" name="email" type="email" required />
+          </label>
+          <label class="block text-sm text-neutral-200" for="message">Vad vill du uppnå?
+            <textarea class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="message" name="message" rows="4" required></textarea>
+          </label>
+          <p class="text-xs text-neutral-400">Korten sparas inte – formuläret visar bara hur validering och fokus fungerar.</p>
+          <div class="flex flex-wrap gap-3">
+            <button type="submit" class="cta-button-primary">Skicka</button>
+            <div class="text-sm text-emerald-200" role="status" aria-live="polite" data-form-status></div>
           </div>
-          <div class="flex items-center justify-between">
-            <span>Tekniker</span>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">TS / Python / C#</span>
-          </div>
-        </div>
+        </form>
       </div>
     </section>
   </main>

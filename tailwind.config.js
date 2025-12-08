@@ -6,6 +6,10 @@ module.exports = {
   content: ['./index.html', './gallery.html', './src/**/*.{html,js,ts,jsx,tsx}', './assets/**/*.{js,ts}'],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '1.5rem',
+      },
       colors: {
         neutral: {
           50: '#eef1f6',
@@ -47,6 +51,32 @@ module.exports = {
         'section-sm': '3.5rem',
         section: '4.5rem',
         'section-lg': '6rem',
+      },
+      boxShadow: {
+        'glow-blue': '0 10px 40px rgba(59, 130, 246, 0.25)',
+        'glow-emerald': '0 10px 40px rgba(52, 211, 153, 0.25)',
+      },
+      backgroundImage: {
+        'grid-slate':
+          'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+        'radial-spot': 'radial-gradient(circle at 30% 20%, rgba(52,211,153,0.12), transparent 35%)',
+      },
+      gridTemplateColumns: {
+        showcase: 'repeat(auto-fit, minmax(280px, 1fr))',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 6s linear infinite',
+        float: 'float 5s ease-in-out infinite',
       },
     },
   },
