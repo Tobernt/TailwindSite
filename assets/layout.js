@@ -266,6 +266,33 @@ function createFooter() {
   return footer;
 }
 
+function createBackToTopButton() {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.setAttribute('aria-label', 'Back to top');
+  button.className = [
+    'fixed bottom-6 right-6 z-30 hidden rounded-full border border-emerald-400/60 bg-emerald-500 text-neutral-950',
+    'px-3 py-2 text-sm font-semibold shadow-lg shadow-emerald-500/40 transition hover:-translate-y-0.5 hover:bg-emerald-400',
+    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300',
+  ].join(' ');
+
+  button.innerHTML = '<span aria-hidden="true">↑</span><span class="sr-only">Back to top</span>';
+
+  const toggleVisibility = () => {
+    const shouldShow = window.scrollY > 240;
+    button.classList.toggle('hidden', !shouldShow);
+  };
+
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  return button;
+}
+
 function injectLayout() {
   const page = document.body.dataset.page || 'home';
   const headerHost = document.querySelector('[data-site-header]');
@@ -281,6 +308,8 @@ function injectLayout() {
   if (footerHost) {
     footerHost.appendChild(createFooter());
   }
+
+  document.body.appendChild(createBackToTopButton());
 }
 
 document.addEventListener('DOMContentLoaded', injectLayout);
