@@ -8,9 +8,15 @@ Detta dokument beskriver layout, tonalitet och komponentdesign för både huvuds
 - **Responsivt**: mobile-first med flex/grid och tydliga brytpunkter.
 
 ### Status
-- [ ] Palett och typografi fastställd
+- [x] Palett och typografi fastställd
 - [ ] Komponentbibliotek för knappar, kort och formulär definierat
 - [ ] Navigationsmönster (header/footer) definierade
+
+## Palett och typografi
+- **Bas**: mörka neutrala toner (`neutral-950` till `neutral-600`) för bakgrund, paneler och textkontraster.
+- **Accenter**: klar blå (`accent-blue-500`/`-600`) för primära CTA och emerald (`accent-emerald-400`) för sekundära highlights och fokusmarkeringar.
+- **Typsnitt**: "Inter"/"Manrope" för brödtext och UI, "Space Grotesk" för rubriker; monospace "JetBrains Mono" för kodexempel.
+- **Spacing tokens**: `gutter` (1.25rem) för horisontella marginaler samt `section-sm`/`section`/`section-lg` (3.5–6rem) för vertikala rytmer.
 
 ## Informationsarkitektur
 1. **Huvudsida**

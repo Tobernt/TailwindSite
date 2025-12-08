@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-950 text-neutral-100 antialiased;
+    font-family: theme('fontFamily.sans');
+  }
+
+  p,
+  li {
+    @apply text-neutral-200;
+  }
+
+  ::selection {
+    @apply bg-accent-blue-600 text-white;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 focus-visible:ring-accent-emerald-400;
+  }
+}
