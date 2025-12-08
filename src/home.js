@@ -57,13 +57,13 @@ function initContactForm() {
     const allFilled = Array.from(formData.values()).every((value) => Boolean(value));
 
     if (!allFilled) {
-      status.textContent = 'Fill in all fields (demo only—no email is sent).';
+      status.textContent = 'Fill in all fields to send.';
       status.classList.add('text-amber-300');
       status.classList.remove('text-emerald-200');
       return;
     }
 
-    status.textContent = 'Demo form validated. Use Contact me to start a real conversation.';
+    status.textContent = 'Thanks! I will reply within 24h with a proposal.';
     status.classList.add('text-emerald-200');
     status.classList.remove('text-amber-300');
   });
