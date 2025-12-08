@@ -1,9 +1,11 @@
+import { getCurrentLanguage, translate } from './i18n.js';
+
 const NAV_ITEMS = [
-  { href: 'index.html', label: 'Hem', key: 'home' },
-  { href: '#about', label: 'Om mig', key: 'about', anchor: true },
-  { href: '#experience', label: 'Erfarenhet', key: 'experience', anchor: true },
-  { href: 'gallery.html', label: 'UI-galleri', key: 'gallery' },
-  { href: '#contact', label: 'Kontakt', key: 'contact', anchor: true },
+  { href: 'index.html', label: 'Home', key: 'home', i18n: 'nav.home' },
+  { href: '#about', label: 'About', key: 'about', anchor: true, i18n: 'nav.about' },
+  { href: '#experience', label: 'Experience', key: 'experience', anchor: true, i18n: 'nav.experience' },
+  { href: 'gallery.html', label: 'UI Gallery', key: 'gallery', i18n: 'nav.gallery' },
+  { href: '#contact', label: 'Contact', key: 'contact', anchor: true, i18n: 'nav.contact' },
 ];
 
 function applyActiveState(links, activeKey) {
@@ -51,6 +53,7 @@ function buildNavLink(item, currentPage) {
 
   link.href = isSamePageAnchor ? item.href : `${item.href.replace('#', 'index.html#')}`;
   link.dataset.navKey = item.key;
+  link.dataset.i18n = item.i18n;
   link.className = [
     'inline-flex items-center rounded-full border border-transparent px-3 py-2 text-sm font-medium',
     'text-neutral-300 transition-colors hover:text-white hover:bg-neutral-800/80',
@@ -86,8 +89,25 @@ function createHeader(currentPage = 'home') {
     menu.appendChild(navItem);
   });
 
+  const controls = document.createElement('div');
+  controls.className = 'flex items-center gap-3';
+  controls.appendChild(menu);
+
+  const langToggle = document.createElement('button');
+  langToggle.type = 'button';
+  langToggle.dataset.langToggle = 'true';
+  langToggle.className = [
+    'rounded-full border border-neutral-700 px-3 py-2 text-sm font-medium text-neutral-200',
+    'bg-neutral-900/80 transition hover:border-emerald-400/60 hover:text-white hover:shadow-glow-emerald',
+    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400',
+  ].join(' ');
+  langToggle.setAttribute('aria-pressed', getCurrentLanguage() === 'sv' ? 'true' : 'false');
+  langToggle.textContent = translate('lang.toggle') ?? 'Svenska';
+
+  controls.appendChild(langToggle);
+
   nav.appendChild(brand);
-  nav.appendChild(menu);
+  nav.appendChild(controls);
   header.appendChild(nav);
   return header;
 }
@@ -133,8 +153,8 @@ function createFooter() {
   footer.innerHTML = `
     <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
       <div>
-        <p class="text-sm font-semibold text-neutral-100">Tobias Berntsson Portfolio</p>
-        <p class="text-sm text-neutral-400">Tailwind Portfolio. Byggd med fokus på tydlighet, responsivitet och tillgänglighet.</p>
+        <p class="text-sm font-semibold text-neutral-100" data-i18n="footer.title">Tobias Berntsson Portfolio</p>
+        <p class="text-sm text-neutral-400" data-i18n="footer.subtitle">Tailwind portfolio built with clarity, responsiveness, and accessibility in mind.</p>
       </div>
       <div class="flex items-center gap-4 text-sm">
         <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="mailto:tobias_berntsson@hotmail.com">tobias_berntsson@hotmail.com</a>
