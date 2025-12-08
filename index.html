@@ -330,7 +330,7 @@
     </section>
 
     <section id="contact" class="py-section">
-      <div class="grid gap-8 rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+      <div class="rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20">
         <div class="space-y-4">
           <p class="eyebrow" data-i18n="contact.eyebrow">UI gallery</p>
           <h2 class="text-3xl font-bold text-white" data-i18n="contact.title">Ready to start a project?</h2>
@@ -345,26 +345,6 @@
             <span class="pill" data-i18n="contact.tag.demo">Includes recorded demo</span>
           </div>
         </div>
-        <form class="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6" id="contact-form" novalidate>
-          <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-neutral-100" data-i18n="contact.form.title">Contact form</p>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200" data-i18n="contact.form.tag">WCAG tested</span>
-          </div>
-          <label class="block text-sm text-neutral-200" for="name" data-i18n="contact.form.name">Name
-            <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="name" name="name" required />
-          </label>
-          <label class="block text-sm text-neutral-200" for="email" data-i18n="contact.form.email">Email
-            <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="email" name="email" type="email" required />
-          </label>
-          <label class="block text-sm text-neutral-200" for="message" data-i18n="contact.form.message">What do you want to achieve?
-            <textarea class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="message" name="message" rows="4" required></textarea>
-          </label>
-          <p class="text-xs text-neutral-400" data-i18n="contact.form.note">Nothing is saved—this form only shows how validation and focus behave.</p>
-          <div class="flex flex-wrap gap-3">
-            <button type="submit" class="cta-button-primary" data-i18n="contact.form.submit">Send</button>
-            <div class="text-sm text-emerald-200" role="status" aria-live="polite" data-form-status></div>
-          </div>
-        </form>
       </div>
     </section>
   </main>

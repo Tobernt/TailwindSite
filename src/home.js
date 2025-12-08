@@ -46,32 +46,8 @@ function initLocalClock() {
   window.addEventListener('beforeunload', () => clearInterval(timerId));
 }
 
-function initContactForm() {
-  const form = document.getElementById('contact-form');
-  const status = form?.querySelector('[data-form-status]');
-  if (!form || !status) return;
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const allFilled = Array.from(formData.values()).every((value) => Boolean(value));
-
-    if (!allFilled) {
-      status.textContent = 'Fill in all fields to send.';
-      status.classList.add('text-amber-300');
-      status.classList.remove('text-emerald-200');
-      return;
-    }
-
-    status.textContent = 'Thanks! I will reply within 24h with a proposal.';
-    status.classList.add('text-emerald-200');
-    status.classList.remove('text-amber-300');
-  });
-}
-
 function initPage() {
   initLocalClock();
-  initContactForm();
 }
 
 document.addEventListener('DOMContentLoaded', initPage);
