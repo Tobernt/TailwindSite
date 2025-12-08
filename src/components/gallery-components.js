@@ -27,6 +27,8 @@ function initToggle() {
     }
   };
 
+  updateState(toggle.getAttribute('aria-pressed') === 'true');
+
   toggle.addEventListener('click', () => {
     const isOn = toggle.getAttribute('aria-pressed') === 'true';
     updateState(!isOn);
@@ -120,6 +122,10 @@ function initModal() {
   if (!openBtn || !closeBtn || !overlay || !dialog) return;
 
   let lastFocused = null;
+  let isDragging = false;
+  let dragStart = { x: 0, y: 0 };
+  let dialogStart = { x: 0, y: 0 };
+  const dragHandle = dialog.querySelector('[data-modal-drag-handle]') || dialog;
 
   const focusableSelectors = [
     'a[href]',
@@ -131,6 +137,14 @@ function initModal() {
 
   const getFocusable = () =>
     Array.from(dialog.querySelectorAll(focusableSelectors.join(',')));
+
+  const setInitialPosition = () => {
+    const overlayRect = overlay.getBoundingClientRect();
+    const dialogRect = dialog.getBoundingClientRect();
+    dialog.style.position = 'absolute';
+    dialog.style.left = `${Math.max((overlayRect.width - dialogRect.width) / 2, 0)}px`;
+    dialog.style.top = `${Math.max((overlayRect.height - dialogRect.height) / 2, 0)}px`;
+  };
 
   const trapFocus = (event) => {
     if (event.key !== 'Tab') return;
@@ -152,6 +166,7 @@ function initModal() {
     overlay.classList.add('hidden');
     dialog.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', handleKeydown);
+    stopDragging();
     lastFocused?.focus();
   };
 
@@ -168,7 +183,38 @@ function initModal() {
     overlay.classList.remove('hidden');
     dialog.setAttribute('aria-hidden', 'false');
     closeBtn.focus();
+    requestAnimationFrame(setInitialPosition);
     document.addEventListener('keydown', handleKeydown);
+  };
+
+  const stopDragging = () => {
+    isDragging = false;
+    document.removeEventListener('pointermove', handleDrag);
+    document.removeEventListener('pointerup', stopDragging);
+  };
+
+  const handleDrag = (event) => {
+    if (!isDragging) return;
+    const overlayRect = overlay.getBoundingClientRect();
+    const dialogRect = dialog.getBoundingClientRect();
+    const nextLeft = Math.min(Math.max(dialogStart.x + (event.clientX - dragStart.x), 0), overlayRect.width - dialogRect.width);
+    const nextTop = Math.min(Math.max(dialogStart.y + (event.clientY - dragStart.y), 0), overlayRect.height - dialogRect.height);
+    dialog.style.left = `${nextLeft}px`;
+    dialog.style.top = `${nextTop}px`;
+  };
+
+  const startDragging = (event) => {
+    isDragging = true;
+    dragStart = { x: event.clientX, y: event.clientY };
+    const dialogRect = dialog.getBoundingClientRect();
+    const overlayRect = overlay.getBoundingClientRect();
+    dialogStart = {
+      x: dialogRect.left - overlayRect.left,
+      y: dialogRect.top - overlayRect.top,
+    };
+    document.addEventListener('pointermove', handleDrag);
+    document.addEventListener('pointerup', stopDragging);
+    event.preventDefault();
   };
 
   openBtn.addEventListener('click', openModal);
@@ -176,6 +222,7 @@ function initModal() {
   overlay.addEventListener('click', (event) => {
     if (event.target === overlay) closeModal();
   });
+  dragHandle.addEventListener('pointerdown', startDragging);
 }
 
 function initTabs() {

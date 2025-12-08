@@ -1,4 +1,4 @@
-import { getCurrentLanguage, translate } from './i18n.js';
+import { applyLanguage, getCurrentLanguage, translate } from './i18n.js';
 
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Home', key: 'home', i18n: 'nav.home' },
@@ -176,6 +176,7 @@ function injectLayout() {
     const header = createHeader(page);
     headerHost.appendChild(header);
     setupNavigationState(header, page);
+    applyLanguage(getCurrentLanguage());
   }
   if (footerHost) {
     footerHost.appendChild(createFooter());

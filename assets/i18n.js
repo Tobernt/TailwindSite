@@ -310,11 +310,10 @@ function initLanguage() {
   })();
 
   applyLanguage(stored === 'sv' ? 'sv' : 'en');
-
-  document.querySelectorAll('[data-lang-toggle]').forEach((button) => {
-    button.addEventListener('click', () => {
-      applyLanguage(currentLanguage === 'sv' ? 'en' : 'sv');
-    });
+  document.addEventListener('click', (event) => {
+    const toggle = event.target.closest('[data-lang-toggle]');
+    if (!toggle) return;
+    applyLanguage(currentLanguage === 'sv' ? 'en' : 'sv');
   });
 }
 
