@@ -1,5 +1,8 @@
 const translations = {
   en: {
+    'nav.menu.button': 'Menu',
+    'nav.menu.open': 'Open navigation menu',
+    'nav.menu.close': 'Close navigation menu',
     'lang.toggle': 'Svenska',
     'lang.toggle.active': 'English',
     'toggle.on': 'On',
@@ -18,6 +21,9 @@ const translations = {
     'gradient.deactivate': 'Close gradient',
   },
   sv: {
+    'nav.menu.button': 'Meny',
+    'nav.menu.open': 'Öppna menyn',
+    'nav.menu.close': 'Stäng menyn',
     'lang.toggle': 'Svenska',
     'lang.toggle.active': 'English',
     'nav.home': 'Hem',
