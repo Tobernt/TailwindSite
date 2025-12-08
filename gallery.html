@@ -237,6 +237,12 @@
               <div class="hidden space-y-2 text-sm text-neutral-300" data-tab-panel id="tab-two" role="tabpanel" data-i18n="gallery.tabs.codeCopy">Component uses <code class="text-emerald-300">dataset.tab</code> and lean Tailwind classes.</div>
               <div class="hidden space-y-2 text-sm text-neutral-300" data-tab-panel id="tab-three" role="tabpanel" data-i18n="gallery.tabs.processCopy">Pairing sessions plus lightweight RFCs kept stakeholders aligned.</div>
             </div>
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;div role="tablist"&gt;
+  &lt;button role="tab" aria-selected="true" aria-controls="panel-1"&gt;Tab 1&lt;/button&gt;
+  &lt;button role="tab" aria-selected="false" aria-controls="panel-2"&gt;Tab 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id="panel-1" role="tabpanel"&gt;Content 1&lt;/div&gt;
+&lt;div id="panel-2" role="tabpanel" hidden&gt;Content 2&lt;/div&gt;</code></pre>
           </article>
 
           <article class="card-panel">
@@ -273,6 +279,15 @@
                 <span class="text-xs text-neutral-400" data-form-feedback></span>
               </div>
             </form>
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;form novalidate&gt;
+  &lt;label for="email"&gt;Email
+    &lt;input type="email" id="email" required /&gt;
+  &lt;/label&gt;
+  &lt;label for="role"&gt;Role
+    &lt;select id="role" required&gt;...&lt;/select&gt;
+  &lt;/label&gt;
+  &lt;button type="submit"&gt;Validate&lt;/button&gt;
+&lt;/form&gt;</code></pre>
           </article>
 
           <article class="card-panel">
@@ -292,6 +307,9 @@
 </code></pre>
               <p class="text-xs text-neutral-400" data-copy-status></p>
             </div>
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;button data-copy-code data-code-target="snippet"&gt;Copy&lt;/button&gt;
+&lt;pre id="snippet"&gt;&lt;code&gt;// Your code here&lt;/code&gt;&lt;/pre&gt;
+&lt;p data-copy-status&gt;&lt;/p&gt;</code></pre>
           </article>
 
           <article class="card-panel">
@@ -316,6 +334,18 @@
                 <div class="text-sm text-emerald-200" role="status" aria-live="polite" data-form-status></div>
               </div>
             </form>
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;form id="contact-form" novalidate&gt;
+  &lt;label for="name"&gt;Name
+    &lt;input id="name" required /&gt;
+  &lt;/label&gt;
+  &lt;label for="email"&gt;Email
+    &lt;input type="email" id="email" required /&gt;
+  &lt;/label&gt;
+  &lt;label for="message"&gt;Message
+    &lt;textarea id="message" required&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
           </article>
 
           <article class="card-panel">
