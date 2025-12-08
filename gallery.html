@@ -3,12 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobias Berntsson Portfolio | UI Gallery</title>
+  <title>UI Gallery | Tobias Berntsson Portfolio | Component Examples</title>
+  <meta name="description" content="Interactive UI component gallery showcasing accessible, responsive design patterns. Examples include toggles, modals, tabs, forms, and more built with Tailwind CSS.">
+  <meta name="keywords" content="UI components, design system, Tailwind CSS, accessible components, responsive design, web components, frontend examples">
+  <meta name="author" content="Tobias Berntsson">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tobiasberntssonportfolio.netlify.app/gallery.html">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tobiasberntssonportfolio.netlify.app/gallery.html">
+  <meta property="og:title" content="UI Gallery | Tobias Berntsson Portfolio">
+  <meta property="og:description" content="Interactive UI component gallery showcasing accessible, responsive design patterns built with Tailwind CSS.">
+  <meta property="og:site_name" content="Tobias Berntsson Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UI Gallery | Tobias Berntsson Portfolio">
+  <meta name="twitter:description" content="Interactive UI component gallery showcasing accessible, responsive design patterns built with Tailwind CSS.">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#10b981">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
   <link rel="stylesheet" href="assets/styles.css">
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script type="module" src="assets/layout.js"></script>
   <script type="module" src="assets/i18n.js"></script>
   <script type="module" src="src/components/gallery-components.js"></script>
+  <script type="module" src="src/home.js"></script>
 </head>
 <body class="bg-neutral-900 text-neutral-100" data-page="gallery">
   <div data-site-header></div>
@@ -287,6 +316,47 @@
                 <div class="text-sm text-emerald-200" role="status" aria-live="polite" data-form-status></div>
               </div>
             </form>
+          </article>
+
+          <article class="card-panel">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <h2 class="text-xl font-semibold text-white" data-i18n="gallery.clock.title">Live local time</h2>
+              <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100" data-i18n="gallery.clock.tag">Live</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300" data-i18n="gallery.clock.summary">Real-time clock using the <code class="text-emerald-300">Intl.DateTimeFormat</code> API with auto-refresh every second.</p>
+            <div class="mt-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 shadow-xl shadow-emerald-500/20 space-y-4">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-neutral-100" data-i18n="gallery.clock.label">Current local time</p>
+                  <p class="text-xs text-neutral-400" data-i18n="gallery.clock.note">Updates every second with a manual refresh option.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-950/70 px-4 py-5">
+                <div class="space-y-1">
+                  <p class="text-sm text-neutral-400" data-i18n="gallery.clock.timeLabel">Local time</p>
+                  <p class="text-2xl font-semibold text-white" data-local-time>--:--:--</p>
+                </div>
+                <button type="button" data-refresh-clock class="rounded-full border border-emerald-400/60 bg-emerald-500 px-4 py-2 text-sm font-semibold text-neutral-950 shadow-glow-emerald transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" data-i18n="gallery.clock.refresh">
+                  Refresh
+                </button>
+              </div>
+              <p class="text-xs text-neutral-400" data-clock-status data-i18n="gallery.clock.waiting">Waiting for the next tick…</p>
+              <div class="rounded-xl border border-neutral-800 bg-neutral-950/60 p-4 text-xs text-neutral-200 space-y-2">
+                <p class="font-semibold text-neutral-100" data-i18n="gallery.clock.howTitle">How it works</p>
+                <p data-i18n="gallery.clock.howBody">The clock uses the <code class="text-emerald-300">Intl.DateTimeFormat</code> API to read your device time and re-render it without a page reload.</p>
+              </div>
+            </div>
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>const formatTime = (date) =&gt;
+  new Intl.DateTimeFormat([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short',
+  }).format(date);
+
+setInterval(() =&gt; {
+  clock.textContent = formatTime(new Date());
+}, 1000);</code></pre>
           </article>
         </div>
       </div>

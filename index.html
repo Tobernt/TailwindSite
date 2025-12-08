@@ -3,12 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobias Berntsson Portfolio | Tailwind Portfolio</title>
+  <title>Tobias Berntsson | Full-Stack Developer | Python, C#, JavaScript</title>
+  <meta name="description" content="Full-stack developer specializing in Python, C#, JavaScript, and SQL. Experienced in automation, data pipelines, CI/CD, and building accessible web applications. Available for remote work.">
+  <meta name="keywords" content="full-stack developer, software engineer, Python developer, C# developer, JavaScript developer, remote developer, automation engineer, web developer, Sweden, Olofström">
+  <meta name="author" content="Tobias Berntsson">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tobiasberntssonportfolio.netlify.app/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tobiasberntssonportfolio.netlify.app/">
+  <meta property="og:title" content="Tobias Berntsson | Full-Stack Developer">
+  <meta property="og:description" content="Full-stack developer specializing in Python, C#, JavaScript, and SQL. Building accessible products that deliver measurable impact.">
+  <meta property="og:site_name" content="Tobias Berntsson Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tobias Berntsson | Full-Stack Developer">
+  <meta name="twitter:description" content="Full-stack developer specializing in Python, C#, JavaScript, and SQL. Building accessible products that deliver measurable impact.">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#10b981">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tobias Berntsson",
+    "url": "https://tobiasberntssonportfolio.netlify.app/",
+    "jobTitle": "Full-Stack Developer",
+    "description": "Full-stack developer focused on automation, data security, and clear communication between engineering and the business.",
+    "knowsAbout": ["Python", "C#", "JavaScript", "SQL", "Flutter", "Flask", "Tailwind CSS", "Unity", "CI/CD", "DevOps", "PostgreSQL", "Redis"],
+    "sameAs": [],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Olofström",
+      "addressCountry": "Sweden"
+    },
+    "workLocation": {
+      "@type": "Place",
+      "name": "Remote"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="assets/styles.css">
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script type="module" src="assets/layout.js"></script>
   <script type="module" src="assets/i18n.js"></script>
-  <script type="module" src="src/home.js"></script>
 </head>
 <body class="bg-neutral-900 text-neutral-100" data-page="home">
   <div data-site-header></div>
@@ -281,53 +331,6 @@
       </div>
     </section>
 
-    <section id="api" class="section-shell">
-      <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-        <div class="space-y-4">
-          <p class="eyebrow">API showcase</p>
-          <h2 class="text-3xl font-bold text-white">Live local time demo</h2>
-          <p class="text-neutral-300">Simple API-style widget that surfaces your current local time and keeps it fresh without refreshing the page.</p>
-          <div class="grid gap-3 sm:grid-cols-2">
-            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-4 space-y-2">
-              <p class="text-sm font-semibold text-neutral-100">Hosting</p>
-              <p class="text-sm text-neutral-300">Deployed on Netlify for quick previews and global edge delivery.</p>
-            </div>
-            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-4 space-y-2">
-              <p class="text-sm font-semibold text-neutral-100">Version control</p>
-              <p class="text-sm text-neutral-300">Tracked in GitHub with structured commits and review-friendly diffs.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 text-xs text-neutral-400">
-            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Netlify hosting</span>
-            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100">GitHub version control</span>
-            <span class="pill">Lightweight API sample</span>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 shadow-xl shadow-emerald-500/20 space-y-4">
-          <div class="flex items-center justify-between gap-3">
-            <div>
-              <p class="text-sm font-semibold text-neutral-100">Current local time</p>
-              <p class="text-xs text-neutral-400">Updates every second with a manual refresh option.</p>
-            </div>
-            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Live</span>
-          </div>
-          <div class="flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-950/70 px-4 py-5">
-            <div class="space-y-1">
-              <p class="text-sm text-neutral-400">Local time</p>
-              <p class="text-2xl font-semibold text-white" data-local-time>--:--:--</p>
-            </div>
-            <button type="button" data-refresh-clock class="rounded-full border border-emerald-400/60 bg-emerald-500 px-4 py-2 text-sm font-semibold text-neutral-950 shadow-glow-emerald transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">
-              Refresh
-            </button>
-          </div>
-          <p class="text-xs text-neutral-400" data-clock-status>Waiting for the next tick…</p>
-          <div class="rounded-xl border border-neutral-800 bg-neutral-950/60 p-4 text-xs text-neutral-200 space-y-2">
-            <p class="font-semibold text-neutral-100">How it works</p>
-            <p>The clock uses the <code class="text-emerald-300">Intl.DateTimeFormat</code> API to read your device time and re-render it without a page reload.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="contact" class="py-section">
       <div class="rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20">
