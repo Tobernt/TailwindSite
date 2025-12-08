@@ -1,0 +1,6 @@
+# Robots.txt for tobiasberntssonportfolio.netlify.app
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tobiasberntssonportfolio.netlify.app/sitemap.xml
