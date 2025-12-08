@@ -15,7 +15,7 @@ function createHeader(currentPage = 'home') {
 
   const brand = document.createElement('a');
   brand.href = 'index.html';
-  brand.className = 'text-lg font-semibold tracking-tight text-neutral-50 hover:text-emerald-300 transition-colors';
+  brand.className = 'text-lg font-semibold tracking-tight text-neutral-50 hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400';
   brand.textContent = 'Tailwind Portfolio';
 
   const menu = document.createElement('ul');
@@ -26,7 +26,10 @@ function createHeader(currentPage = 'home') {
     const link = document.createElement('a');
     const isSamePageAnchor = item.anchor && currentPage === 'home';
     link.href = isSamePageAnchor ? item.href : `${item.href.replace('#', 'index.html#')}`;
-    link.className = `text-neutral-300 hover:text-emerald-300 transition-colors ${currentPage === item.key ? 'text-emerald-300 font-semibold' : ''}`;
+    link.className = `text-neutral-300 hover:text-emerald-200 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 ${currentPage === item.key ? 'text-emerald-300 font-semibold' : ''}`;
+    if (currentPage === item.key) {
+      link.setAttribute('aria-current', 'page');
+    }
     link.textContent = item.label;
     li.appendChild(link);
     menu.appendChild(li);
@@ -49,10 +52,10 @@ function createFooter() {
         <p class="text-sm text-neutral-400">Byggd med fokus på tydlighet, responsivitet och tillgänglighet.</p>
       </div>
       <div class="flex items-center gap-4 text-sm">
-        <a class="hover:text-emerald-300 transition-colors" href="mailto:contact@example.com">contact@example.com</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="mailto:contact@example.com">contact@example.com</a>
         <span class="text-neutral-700">|</span>
-        <a class="hover:text-emerald-300 transition-colors" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
-        <a class="hover:text-emerald-300 transition-colors" href="https://github.com" aria-label="GitHub">GitHub</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://github.com" aria-label="GitHub">GitHub</a>
       </div>
     </div>
   `;

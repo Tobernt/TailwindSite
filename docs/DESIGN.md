@@ -74,13 +74,13 @@ Komponentchecklistor:
 - **CTA-text**: ”Kontakta mig” och ”Utforska UI-galleriet”.
 
 ### Checklistor för tonalitet
-- [ ] Mikrocopy för CTA och kort skrivna
+- [x] Mikrocopy för CTA och kort skrivna
 - [ ] Resultat- och effektformuleringar för erfarenhetskort
 - [ ] Kodförklaringar skrivna i galleriet
 
 ## Tillgänglighet
-- [ ] ARIA-attribut på interaktiva element
-- [ ] Fokusmarkeringar på knappar, länkar och formulär
+- [x] ARIA-attribut på interaktiva element
+- [x] Fokusmarkeringar på knappar, länkar och formulär
 - [ ] Kontrasttest för text och bakgrund
 - [ ] Tangentbordsnavigering testad
 
