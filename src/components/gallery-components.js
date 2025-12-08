@@ -133,6 +133,8 @@ function initModal() {
   let isDragging = false;
   let dragStart = { x: 0, y: 0 };
   let dialogStart = { x: 0, y: 0 };
+  let scrollPosition = 0;
+  const body = document.body;
   const dragHandle = dialog.querySelector('[data-modal-drag-handle]') || dialog;
 
   const focusableSelectors = [
@@ -175,6 +177,12 @@ function initModal() {
     dialog.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', handleKeydown);
     stopDragging();
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
+    body.style.top = '';
+    body.style.touchAction = '';
+    window.scrollTo(0, scrollPosition);
     lastFocused?.focus();
   };
 
@@ -188,6 +196,12 @@ function initModal() {
 
   const openModal = () => {
     lastFocused = document.activeElement;
+    scrollPosition = window.scrollY;
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+    body.style.top = `-${scrollPosition}px`;
+    body.style.touchAction = 'none';
     overlay.classList.remove('hidden');
     dialog.setAttribute('aria-hidden', 'false');
     closeBtn.focus();
@@ -230,7 +244,8 @@ function initModal() {
   overlay.addEventListener('click', (event) => {
     if (event.target === overlay) closeModal();
   });
-  dragHandle.addEventListener('pointerdown', startDragging);
+  dragHandle.addEventListener('pointerdown', startDragging, { passive: false });
+  overlay.addEventListener('touchmove', (event) => event.preventDefault(), { passive: false });
 }
 
 function initTabs() {
