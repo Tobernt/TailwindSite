@@ -8,7 +8,7 @@ const translations = {
     'toggle.on': 'On',
     'toggle.off': 'Off',
     'toggle.label.on': 'Enabled',
-    'toggle.label.off': 'Off',
+    'toggle.label.off': 'Disabled',
     'slider.value': '{value}%',
     'slider.aria': '{value} percent',
     'form.invalid': 'Check email and role before continuing.',
@@ -246,7 +246,7 @@ const translations = {
     'toggle.on': 'På',
     'toggle.off': 'Av',
     'toggle.label.on': 'Aktiverad',
-    'toggle.label.off': 'Av',
+    'toggle.label.off': 'Inaktiverad',
   },
 };
 
