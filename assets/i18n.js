@@ -146,7 +146,7 @@ const translations = {
     'projects.items.tailwind.result': 'Resultat: Snabb prototyp som visar komponentbibliotek, UI-detaljer och responsivitet.',
     'contact.eyebrow': 'UI-galleri',
     'contact.title': 'Redo att börja ett projekt?',
-    'contact.subtitle': 'Boka en genomgång av dina utmaningar eller be om en liten prototyp. Jag återkommer inom en arbetsdag.',
+    'contact.subtitle': 'Boka en genomgång av dina utmaningar eller be om en liten prototyp. Jag återkommer så snart som möjligt.',
     'contact.ctaPrimary': 'Boka en genomgång',
     'contact.ctaSecondary': 'Utforska lösningar i galleriet',
     'contact.tag.workshop': 'Tillgänglig för workshop',
