@@ -9,21 +9,29 @@ function initToggle() {
   if (!toggle) return;
 
   const knob = toggle.querySelector('[data-toggle-knob]');
-  const label = toggle.querySelector('[data-toggle-label]');
+  const offLabel = document.querySelector('[data-toggle-label-off]');
+  const onLabel = document.querySelector('[data-toggle-label-on]');
   const { translate } = getTranslator();
 
   const updateState = (isOn) => {
     toggle.setAttribute('aria-pressed', String(isOn));
     toggle.classList.toggle('bg-emerald-500/20', isOn);
     toggle.classList.toggle('border-emerald-300', isOn);
-    knob?.classList.toggle('translate-x-9', isOn);
+    knob?.classList.toggle('translate-x-[4.5rem]', isOn);
     knob?.classList.toggle('bg-emerald-300', isOn);
     knob?.classList.toggle('text-neutral-900', isOn);
     if (knob) {
       knob.textContent = translate(isOn ? 'toggle.on' : 'toggle.off');
     }
-    if (label) {
-      label.textContent = translate(isOn ? 'toggle.label.on' : 'toggle.label.off');
+    onLabel?.classList.toggle('text-emerald-300', isOn);
+    onLabel?.classList.toggle('text-neutral-500', !isOn);
+    offLabel?.classList.toggle('text-emerald-300', !isOn);
+    offLabel?.classList.toggle('text-neutral-500', isOn);
+    if (onLabel) {
+      onLabel.textContent = translate('toggle.label.on');
+    }
+    if (offLabel) {
+      offLabel.textContent = translate('toggle.label.off');
     }
   };
 
