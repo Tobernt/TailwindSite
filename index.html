@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="sv" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV – Digital Produktutvecklare</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/base.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/components.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/utilities.min.css"
+    />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-900/60 via-slate-900 to-slate-950"></div>
+    <header class="sticky top-0 z-20 backdrop-blur border-b border-white/5 bg-slate-950/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <span class="text-lg font-semibold tracking-tight text-white">Elin Larsson</span>
+        <nav class="hidden gap-6 text-sm font-medium text-slate-200 sm:flex">
+          <a class="hover:text-white" href="#profil">Profil</a>
+          <a class="hover:text-white" href="#kompetens">Kompetenser</a>
+          <a class="hover:text-white" href="#erfarenhet">Erfarenhet</a>
+          <a class="hover:text-white" href="#kontakt">Kontakt</a>
+        </nav>
+        <a
+          href="#kontakt"
+          class="hidden rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:-translate-y-0.5 hover:bg-indigo-400 sm:inline-flex"
+        >
+          Låt oss prata
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-12">
+      <section class="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]" id="profil">
+        <div class="space-y-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-300">
+            Software Developer – Web & E‑commerce
+          </p>
+          <h1 class="text-4xl font-bold leading-tight text-white sm:text-5xl">
+            Bygger snabba, hållbara och upplevelsedrivna webbar med React, Next.js och Tailwind CSS.
+          </h1>
+          <p class="text-lg text-slate-200">
+            Jag hjälper digitala produktteam att leverera moderna upplevelser med robust kod, genomtänkt arkitektur och nära samarbete med UX och backend. Fokus: testbarhet, prestanda och tillgänglighet.
+          </p>
+          <div class="flex flex-wrap gap-3 text-sm font-medium text-indigo-100">
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Next.js (SSR)</span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">TypeScript</span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Tailwind CSS</span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Design Systems</span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">CI/CD</span>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="#kontakt"
+              class="rounded-full bg-indigo-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:-translate-y-0.5 hover:bg-indigo-400"
+            >
+              Boka ett samtal
+            </a>
+            <a
+              href="#erfarenhet"
+              class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-100"
+            >
+              Se erfarenhet
+            </a>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-indigo-500/20">
+          <div class="absolute right-6 top-6 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/40 to-cyan-400/30 blur-3xl"></div>
+          <div class="relative space-y-4">
+            <h2 class="text-xl font-semibold text-white">Snabbt CV i ett kort</h2>
+            <div class="space-y-3 text-sm text-slate-200">
+              <p>🧩 7+ år av frontendutveckling i React/Next.js och TypeScript.</p>
+              <p>🎨 Bygger komponenter i delade design-system (Storybook, Tailwind).</p>
+              <p>🧭 Leder integrationer mot CMS & API:er (REST/GraphQL) med god DX.</p>
+              <p>🚀 Optimerar Core Web Vitals, tillgänglighet och CI/CD-flöden.</p>
+              <p>🤝 Jobbar tätt med UX, QA och backend – gillar parprogrammering.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid gap-8 md:grid-cols-2" id="kompetens">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-indigo-300">
+            <div class="h-0.5 w-8 bg-indigo-400"></div>
+            <span class="text-sm font-semibold uppercase tracking-[0.25em]">Kompetenser</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white">Teknikstack & arbetssätt</h2>
+          <p class="text-slate-200">
+            Jag trivs i korsfunktionella team och tar ansvar för kodkvalitet, dokumentation och mätbar effekt. Nedan syns min vardagsteknik och vad som särskiljer mig i rollen.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">React & Next.js</h3>
+            <p class="mt-2 text-sm text-slate-200">SSR/SSG, routing, datafetching, optimerad rendering och delad logik med hooks.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">TypeScript</h3>
+            <p class="mt-2 text-sm text-slate-200">Strikt typning, återanvändbara typer, API-kontrakt och förenklat DX med generics.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">Tailwind CSS</h3>
+            <p class="mt-2 text-sm text-slate-200">Utility-first styling, design tokens och responsivitet med komponentbibliotek.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">API-integrationer</h3>
+            <p class="mt-2 text-sm text-slate-200">GraphQL/REST, cachingstrategier, autentisering och robust felhantering.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">Arkitektur</h3>
+            <p class="mt-2 text-sm text-slate-200">Komponentbaserat, NX-monorepoer, modulära paket och delade design-system.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-indigo-500/10">
+            <h3 class="text-lg font-semibold text-white">Kvalitet & CI/CD</h3>
+            <p class="mt-2 text-sm text-slate-200">Vitest/Cypress, code review, pipelines, prestandamätning och release-automation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="grid gap-8 md:grid-cols-[1.1fr_0.9fr]" id="erfarenhet">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-indigo-300">
+            <div class="h-0.5 w-8 bg-indigo-400"></div>
+            <span class="text-sm font-semibold uppercase tracking-[0.25em]">Erfarenhet</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white">Utvalda ansvarsområden</h2>
+          <ul class="space-y-3 text-slate-200">
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Utvecklar responsiva gränssnitt med React, Next.js och TypeScript.</li>
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Arbetar i delat design-system och komponentbibliotek med Tailwind CSS.</li>
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Integrerar headless CMS och API:er (GraphQL/REST) med robusta kontrakt.</li>
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Samverkar nära med backend och UX för enhetliga upplevelser.</li>
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Skriver enhetstester/integrationstester och leder code reviews.</li>
+            <li class="flex gap-3"><span class="text-indigo-300">•</span>Bidrar till CI/CD, observability och kontinuerlig prestandaförbättring.</li>
+          </ul>
+        </div>
+        <div class="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-indigo-500/10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-[0.25em] text-indigo-300">Roll</p>
+              <p class="text-lg font-semibold text-white">Software Developer – Digitala produkter</p>
+            </div>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-semibold text-indigo-100">Nuvarande</span>
+          </div>
+          <div class="text-sm text-slate-200">
+            <p>Driver utveckling, drift och support av globala webbplatser och e-handel i ett korsfunktionellt team. Kombinerar produktfokus med teknisk excellens.</p>
+          </div>
+          <div class="grid gap-3 text-sm text-slate-100 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <p class="text-xs uppercase tracking-[0.2em] text-indigo-300">Teamarbete</p>
+              <p class="mt-1 text-sm text-slate-100">Planerar med UX, backend, QA och stakeholders i sprintar och design reviews.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <p class="text-xs uppercase tracking-[0.2em] text-indigo-300">Prestanda & A11y</p>
+              <p class="mt-1 text-sm text-slate-100">Mäter Core Web Vitals, automatiserar tillgänglighetstester och optimerar assets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid gap-8 lg:grid-cols-[1fr_0.9fr]" id="projekt">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-indigo-300">
+            <div class="h-0.5 w-8 bg-indigo-400"></div>
+            <span class="text-sm font-semibold uppercase tracking-[0.25em]">Projekt</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white">Några exempel på leveranser</h2>
+          <p class="text-slate-200">Urval av arbete som speglar rollen inom web och e‑handel.</p>
+          <div class="space-y-3 text-sm text-slate-200">
+            <p>→ Migrerade en e-handelsfront till Next.js 14 med App Router och ISR vilket sänkte LCP med 35%.</p>
+            <p>→ Tog fram komponentbibliotek i Tailwind + Storybook som ökade återanvändning och gav designparitet.</p>
+            <p>→ Integrerade Contentful via GraphQL, cachade queries och förbättrade redaktörsflöden med tydliga typer.</p>
+            <p>→ Införde Vitest & Cypress i CI/CD med kvalitetsportar och automatiserade kontraktstester mot API:er.</p>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-950 p-6 shadow-2xl shadow-indigo-500/20">
+            <p class="text-xs uppercase tracking-[0.25em] text-indigo-200">Fokus</p>
+            <h3 class="mt-2 text-xl font-semibold text-white">Prestanda & DevEx</h3>
+            <p class="mt-2 text-sm text-slate-100">Jobbar datadrivet med Lighthouse, profilerar rendering och prioriterar snabb byggtid i monorepon.</p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-indigo-500/10">
+            <p class="text-xs uppercase tracking-[0.25em] text-indigo-200">Samarbete</p>
+            <h3 class="mt-2 text-xl font-semibold text-white">Designsystem & dokumentation</h3>
+            <p class="mt-2 text-sm text-slate-100">Definierar tokens, skriver stories och säkerställer tillgänglighet i komponentbibliotek.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-indigo-500/20" id="kontakt">
+        <div class="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div class="space-y-3">
+            <h2 class="text-3xl font-bold text-white">Redo att bygga nästa generation webb?</h2>
+            <p class="text-slate-200">Jag är nyfiken på hur jag kan stärka ert digitala produktteam. Hör av dig så tar vi ett samtal om behov, roadmap och hur jag kan bidra.</p>
+            <div class="flex flex-wrap gap-3 text-sm font-medium text-indigo-100">
+              <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Stockholm/Remote</span>
+              <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Agila team</span>
+              <span class="rounded-full bg-indigo-500/20 px-3 py-1 ring-1 ring-indigo-500/40">Tillgänglighet</span>
+            </div>
+          </div>
+          <div class="space-y-4 rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/20 text-lg">👋</span>
+              <div>
+                <p class="text-sm font-semibold text-white">Kontakta mig</p>
+                <p class="text-xs text-slate-300">Svarar vanligtvis inom 24h</p>
+              </div>
+            </div>
+            <div class="space-y-2 text-sm text-slate-200">
+              <p><span class="text-indigo-300">Mail:</span> elin.larsson@example.com</p>
+              <p><span class="text-indigo-300">LinkedIn:</span> linkedin.com/in/elin-larsson</p>
+              <p><span class="text-indigo-300">GitHub:</span> github.com/elinlarsson</p>
+            </div>
+            <a
+              href="mailto:elin.larsson@example.com"
+              class="inline-flex items-center justify-center rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:-translate-y-0.5 hover:bg-indigo-400"
+            >
+              Skicka ett meddelande
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/5 bg-slate-950/80 py-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2024 Elin Larsson – Frontend & produktutveckling</p>
+        <div class="flex gap-4">
+          <a class="hover:text-indigo-200" href="#profil">Till toppen</a>
+          <a class="hover:text-indigo-200" href="#kompetens">Kompetenser</a>
+          <a class="hover:text-indigo-200" href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
