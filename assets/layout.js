@@ -76,7 +76,7 @@ function createHeader(currentPage = 'home') {
     'hover:text-emerald-300 transition-colors rounded-full',
     'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400',
   ].join(' ');
-  brand.textContent = 'Tailwind Portfolio';
+  brand.textContent = 'Tobias Berntsson Portfolio';
 
   const menu = document.createElement('ul');
   menu.className = 'flex items-center gap-2 text-sm';
@@ -133,14 +133,14 @@ function createFooter() {
   footer.innerHTML = `
     <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
       <div>
-        <p class="text-sm font-semibold text-neutral-100">Tailwind Portfolio</p>
-        <p class="text-sm text-neutral-400">Byggd med fokus på tydlighet, responsivitet och tillgänglighet.</p>
+        <p class="text-sm font-semibold text-neutral-100">Tobias Berntsson Portfolio</p>
+        <p class="text-sm text-neutral-400">Tailwind Portfolio. Byggd med fokus på tydlighet, responsivitet och tillgänglighet.</p>
       </div>
       <div class="flex items-center gap-4 text-sm">
-        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="mailto:contact@example.com">contact@example.com</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="mailto:tobias_berntsson@hotmail.com">tobias_berntsson@hotmail.com</a>
         <span class="text-neutral-700">|</span>
-        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
-        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://github.com" aria-label="GitHub">GitHub</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://www.linkedin.com/in/tobias-berntsson/" aria-label="LinkedIn">LinkedIn</a>
+        <a class="hover:text-emerald-300 transition-colors rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400" href="https://github.com/Tobernt/" aria-label="GitHub">GitHub</a>
       </div>
     </div>
   `;
