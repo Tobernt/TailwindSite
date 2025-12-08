@@ -25,139 +25,224 @@
     </section>
 
     <section class="py-16">
-      <div class="grid gap-6 lg:grid-cols-2">
-        <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-lg shadow-neutral-900/40">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-semibold text-white">Smooth toggle</h2>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">Interaktiv</span>
+      <div class="space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p class="eyebrow">Designsystem</p>
+            <h2 class="text-3xl font-bold text-white">Interaktiva komponenter</h2>
+            <p class="text-sm text-neutral-400">Gridad översikt över återanvändbara UI-mönster med kort kodförklaring.</p>
           </div>
-          <p class="mt-3 text-sm text-neutral-300">Animerad toggle med tydlig fokussignal, röstade etiketter och ARIA-stöd.</p>
-          <div class="mt-5 flex items-center gap-4">
-            <button
-              type="button"
-              data-toggle
-              class="group relative inline-flex h-11 w-24 items-center rounded-full border border-neutral-700 bg-neutral-800/80 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-              aria-pressed="false"
-            >
-              <span class="sr-only">Växla notiser</span>
-              <span
-                data-toggle-knob
-                class="pointer-events-none absolute left-1 top-1 flex h-9 w-9 items-center justify-center rounded-full bg-neutral-700 text-xs font-semibold text-neutral-200 transition-all duration-300"
+          <a class="cta-button-ghost" href="index.html#projects">Tillbaka till projekt</a>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Smooth toggle</h2>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Interaktiv</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Animerad toggle med tydlig fokussignal, röstade etiketter och ARIA-stöd.</p>
+            <div class="mt-5 flex items-center gap-4">
+              <button
+                type="button"
+                data-toggle
+                class="group relative inline-flex h-11 w-28 items-center rounded-full border border-neutral-700 bg-neutral-800/80 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                aria-pressed="false"
               >
-                Av
-              </span>
-              <span class="ml-auto pr-4 text-xs font-semibold text-neutral-300" data-toggle-label>Av</span>
-            </button>
-            <p class="text-xs text-neutral-400">Knappen använder <code class="text-emerald-300">aria-pressed</code> för att tydliggöra läget.</p>
-          </div>
-          <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-pressed="false" class="toggle"&gt;
+                <span class="sr-only">Växla notiser</span>
+                <span
+                  data-toggle-knob
+                  class="pointer-events-none absolute left-1 top-1 flex h-9 w-9 items-center justify-center rounded-full bg-neutral-700 text-xs font-semibold text-neutral-200 transition-all duration-300"
+                >
+                  Av
+                </span>
+                <span class="ml-auto pr-4 text-xs font-semibold text-neutral-300" data-toggle-label>Av</span>
+              </button>
+              <p class="text-xs text-neutral-400">Använder <code class="text-emerald-300">aria-pressed</code> för att signalera läge.</p>
+            </div>
+            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-pressed="false" class="toggle"&gt;
   &lt;span class="sr-only"&gt;Växla notiser&lt;/span&gt;
   &lt;span class="knob"&gt;Av&lt;/span&gt;
   &lt;span class="label"&gt;Av&lt;/span&gt;
 &lt;/button&gt;</code></pre>
-        </article>
+          </article>
 
-        <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-lg shadow-neutral-900/40">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-semibold text-white">Slider med live-värde</h2>
-            <span class="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-200">Feedback</span>
-          </div>
-          <p class="mt-3 text-sm text-neutral-300">Reglaget uppdaterar värdet i realtid med <code class="text-emerald-300">aria-valuetext</code> och <code class="text-emerald-300">aria-live</code>.</p>
-          <div class="mt-5 flex flex-col gap-3">
-            <label class="text-sm text-neutral-200" for="volume">Välj nivå</label>
-            <div class="flex items-center gap-3">
-              <input
-                id="volume"
-                type="range"
-                min="0"
-                max="100"
-                value="45"
-                step="5"
-                data-slider
-                aria-label="Välj nivå"
-                class="w-full accent-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-              />
-              <span class="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-100" aria-live="polite" data-slider-value></span>
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Slider med live-värde</h2>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Feedback</span>
             </div>
-          </div>
-          <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;label for="volume"&gt;Välj nivå&lt;/label&gt;
+            <p class="mt-3 text-sm text-neutral-300">Reglaget uppdaterar värdet i realtid med <code class="text-emerald-300">aria-valuetext</code> och <code class="text-emerald-300">aria-live</code>.</p>
+            <div class="mt-5 flex flex-col gap-3">
+              <label class="text-sm text-neutral-200" for="volume">Välj nivå</label>
+              <div class="flex items-center gap-3">
+                <input
+                  id="volume"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="45"
+                  step="5"
+                  data-slider
+                  aria-label="Välj nivå"
+                  class="w-full accent-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                />
+                <span class="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-100" aria-live="polite" data-slider-value></span>
+              </div>
+            </div>
+            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;label for="volume"&gt;Välj nivå&lt;/label&gt;
 &lt;input id="volume" type="range" aria-label="Välj nivå" /&gt;
 &lt;span aria-live="polite"&gt;45%&lt;/span&gt;</code></pre>
-        </article>
+          </article>
 
-        <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-lg shadow-neutral-900/40">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-semibold text-white">Accordion</h2>
-            <span class="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-200">Struktur</span>
-          </div>
-          <p class="mt-3 text-sm text-neutral-300">Expanderbar panel som växlar höjd och uppdaterar <code class="text-emerald-300">aria-expanded</code>.</p>
-          <div class="mt-5 space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
-            <button
-              type="button"
-              data-accordion-button
-              aria-expanded="false"
-              aria-controls="accordion-panel"
-              class="flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-            >
-              Hur fungerar komponenten?
-              <span class="text-xs text-neutral-400">↕</span>
-            </button>
-            <div class="grid grid-rows-[0fr] transition-all duration-300" data-accordion-panel id="accordion-panel" aria-hidden="true">
-              <div class="overflow-hidden text-sm text-neutral-300">
-                Innehållet kollapsas via CSS-grid radhöjd och får automatiskt rätt semantik för skärmläsare.
-              </div>
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Gradient CTA</h2>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Visuell</span>
             </div>
-          </div>
-          <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-expanded="false" aria-controls="panel"&gt;Fråga&lt;/button&gt;
-&lt;div id="panel" hidden&gt;Svar&lt;/div&gt;</code></pre>
-        </article>
+            <p class="mt-3 text-sm text-neutral-300">Kallar fram en animerad gradient-bakgrund med tydlig kontrast och text som förklarar mönstret.</p>
+            <div class="mt-4 space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/70 p-4" data-gradient-card>
+              <p class="text-sm text-neutral-200">Gradienten är WCAG AA-testad mot text och aktiveras med knappen nedan.</p>
+              <button type="button" data-gradient-toggle class="cta-button-primary">Aktivera gradient</button>
+            </div>
+            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;div class="cta" data-gradient-card&gt;...
+  &lt;button data-gradient-toggle&gt;Aktivera&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </article>
 
-        <article class="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-lg shadow-neutral-900/40">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-semibold text-white">Modal / lightbox</h2>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">Overlay</span>
-          </div>
-          <p class="mt-3 text-sm text-neutral-300">Öppnas via knapp, stängs med overlay, Escape eller knapp. Fokus låses i dialogen.</p>
-          <div class="mt-5 flex items-center gap-4">
-            <button
-              type="button"
-              data-open-modal
-              class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-600/40 transition hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-            >
-              Visa modal
-            </button>
-            <p class="text-xs text-neutral-400">Backdropen har <code class="text-emerald-300">role="dialog"</code> och <code class="text-emerald-300">aria-modal="true"</code>.</p>
-          </div>
-          <div
-            class="fixed inset-0 z-30 hidden items-center justify-center bg-black/70 px-6"
-            data-modal-overlay
-            role="presentation"
-          >
-            <div
-              role="dialog"
-              aria-modal="true"
-              aria-hidden="true"
-              data-modal-dialog
-              class="w-full max-w-md rounded-2xl border border-neutral-800 bg-neutral-900 p-6 shadow-xl shadow-neutral-900/80"
-            >
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <p class="text-sm font-semibold text-neutral-100">Lightbox</p>
-                  <p class="text-sm text-neutral-300">Här kan du lägga valfritt innehåll, t.ex. en bild eller en bekräftelse.</p>
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Accordion</h2>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Struktur</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Expanderbar panel som växlar höjd och uppdaterar <code class="text-emerald-300">aria-expanded</code>.</p>
+            <div class="mt-5 space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
+              <button
+                type="button"
+                data-accordion-button
+                aria-expanded="false"
+                aria-controls="accordion-panel"
+                class="flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                Hur fungerar komponenten?
+                <span class="text-xs text-neutral-400">↕</span>
+              </button>
+              <div class="grid grid-rows-[0fr] transition-all duration-300" data-accordion-panel id="accordion-panel" aria-hidden="true">
+                <div class="overflow-hidden text-sm text-neutral-300">
+                  Innehållet kollapsas via CSS-grid radhöjd och får automatiskt rätt semantik för skärmläsare.
                 </div>
-                <button
-                  type="button"
-                  data-close-modal
-                  class="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-200 transition hover:border-neutral-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-                >
-                  Stäng
-                </button>
               </div>
             </div>
-          </div>
-          <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button data-open-modal&gt;Visa modal&lt;/button&gt;
+            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-expanded="false" aria-controls="panel"&gt;Fråga&lt;/button&gt;
+&lt;div id="panel" hidden&gt;Svar&lt;/div&gt;</code></pre>
+          </article>
+
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Modal / lightbox</h2>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Overlay</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Öppnas via knapp, stängs med overlay, Escape eller knapp. Fokus låses i dialogen.</p>
+            <div class="mt-5 flex items-center gap-4">
+              <button
+                type="button"
+                data-open-modal
+                class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-600/40 transition hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+              >
+                Visa modal
+              </button>
+              <p class="text-xs text-neutral-400">Backdropen har <code class="text-emerald-300">role="dialog"</code> och <code class="text-emerald-300">aria-modal="true"</code>.</p>
+            </div>
+            <div
+              class="fixed inset-0 z-30 hidden items-center justify-center bg-black/70 px-6"
+              data-modal-overlay
+              role="presentation"
+            >
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-hidden="true"
+                data-modal-dialog
+                class="w-full max-w-md rounded-2xl border border-neutral-800 bg-neutral-900 p-6 shadow-xl shadow-neutral-900/80"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-neutral-100">Lightbox</p>
+                    <p class="text-sm text-neutral-300">Här kan du lägga valfritt innehåll, t.ex. en bild eller en bekräftelse.</p>
+                  </div>
+                  <button
+                    type="button"
+                    data-close-modal
+                    class="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-200 transition hover:border-neutral-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                  >
+                    Stäng
+                  </button>
+                </div>
+              </div>
+            </div>
+            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button data-open-modal&gt;Visa modal&lt;/button&gt;
 &lt;div role="dialog" aria-modal="true" hidden&gt;Innehåll&lt;/div&gt;</code></pre>
-        </article>
+          </article>
+
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Tabs med tangentbord</h2>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Navigation</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Piltangenterna flyttar fokus mellan flikar; panelerna styrs med <code class="text-emerald-300">aria-controls</code>.</p>
+            <div class="mt-4 space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
+              <div class="flex gap-2" role="tablist" aria-label="Case-tabs" data-tab-list>
+                <button type="button" class="pill bg-neutral-800/70" role="tab" aria-selected="true" aria-controls="tab-one" data-tab="one">Resultat</button>
+                <button type="button" class="pill" role="tab" aria-selected="false" aria-controls="tab-two" data-tab="two">Kod</button>
+                <button type="button" class="pill" role="tab" aria-selected="false" aria-controls="tab-three" data-tab="three">Process</button>
+              </div>
+              <div class="space-y-2 text-sm text-neutral-300" data-tab-panel id="tab-one" role="tabpanel">Automatiserade regressionstester gav 12% fler features utan buggreports.</div>
+              <div class="hidden space-y-2 text-sm text-neutral-300" data-tab-panel id="tab-two" role="tabpanel">Komponenten använder <code class="text-emerald-300">dataset.tab</code> och enklare klasser från Tailwind.</div>
+              <div class="hidden space-y-2 text-sm text-neutral-300" data-tab-panel id="tab-three" role="tabpanel">Workshop-format med skisser, design tokens och snabb feedback via figma-tokens.</div>
+            </div>
+          </article>
+
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Validerat mini-formulär</h2>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Form</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Inline-validering, tydliga fel och live-status gör det enkelt att förstå nästa steg.</p>
+            <form class="mt-4 space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/60 p-4" data-demo-form novalidate>
+              <label class="block text-sm text-neutral-200" for="demo-email">E-post
+                <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="demo-email" name="email" type="email" required />
+              </label>
+              <label class="block text-sm text-neutral-200" for="demo-role">Roll
+                <select class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="demo-role" name="role" required>
+                  <option value="" selected>Välj roll</option>
+                  <option>Produktägare</option>
+                  <option>Utvecklare</option>
+                  <option>Designer</option>
+                </select>
+              </label>
+              <div class="flex flex-wrap gap-3">
+                <button type="submit" class="cta-button-primary">Validera</button>
+                <span class="text-xs text-neutral-400" role="status" aria-live="polite" data-form-feedback></span>
+              </div>
+            </form>
+          </article>
+
+          <article class="card-panel">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-white">Kodblock med kopiera</h2>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">DX</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-300">Ett enkelt kodblock med kopiera-knapp och status för tangentbord och skärmläsare.</p>
+            <div class="mt-4 rounded-xl border border-neutral-800 bg-neutral-950/70 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xs font-semibold text-neutral-200">Installera Tailwind</p>
+                <button type="button" class="pill" data-copy-code data-code-target="code-snippet">Kopiera</button>
+              </div>
+              <pre class="mt-3 overflow-x-auto text-xs text-neutral-200"><code id="code-snippet">npx tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --minify</code></pre>
+              <p class="text-xs text-emerald-200" data-copy-status aria-live="polite"></p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
