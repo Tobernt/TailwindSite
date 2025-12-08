@@ -156,7 +156,7 @@
               <p class="text-xs text-neutral-400" data-i18n="gallery.modal.note">Backdrop uses <code class="text-emerald-300">role="dialog"</code> and <code class="text-emerald-300">aria-modal="true"</code>.</p>
             </div>
             <div
-              class="fixed inset-0 z-30 hidden items-center justify-center bg-black/70 px-6"
+              class="fixed inset-0 z-30 hidden flex items-center justify-center bg-black/70 px-6"
               data-modal-overlay
               role="presentation"
             >
@@ -167,7 +167,7 @@
                 data-modal-dialog
                 class="w-full max-w-md rounded-2xl border border-neutral-800 bg-neutral-900 p-6 shadow-xl shadow-neutral-900/80"
               >
-                <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start justify-between gap-3 cursor-move" data-modal-drag-handle>
                   <div>
                     <p class="text-sm font-semibold text-neutral-100" data-i18n="gallery.modal.header">Lightbox</p>
                     <p class="text-sm text-neutral-300" data-i18n="gallery.modal.body">Place any content here, such as an image or confirmation.</p>
