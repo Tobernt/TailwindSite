@@ -10,7 +10,7 @@ Detta dokument beskriver layout, tonalitet och komponentdesign för både huvuds
 ### Status
 - [x] Palett och typografi fastställd
 - [ ] Komponentbibliotek för knappar, kort och formulär definierat
-- [ ] Navigationsmönster (header/footer) definierade
+- [x] Navigationsmönster (header/footer) definierade
 
 ## Palett och typografi
 - **Bas**: mörka neutrala toner (`neutral-950` till `neutral-600`) för bakgrund, paneler och textkontraster.
@@ -32,9 +32,9 @@ Detta dokument beskriver layout, tonalitet och komponentdesign för både huvuds
    - Navigering tillbaka till huvudsidan
 
 ### Checklistor för struktur
-- [ ] Header med logotyp/namn och länk till galleri
-- [ ] Footer med kontakt och sociala länkar
-- [ ] Konsistent spacing mellan sektioner (t.ex. `py-16`)
+- [x] Header med logotyp/namn och länk till galleri
+- [x] Footer med kontakt och sociala länkar
+- [x] Konsistent spacing mellan sektioner (t.ex. `py-16`)
 
 ## Layoutdetaljer
 ### Huvudsida
@@ -91,6 +91,6 @@ Komponentchecklistor:
 
 ## Spårning av nästa steg
 - [ ] Välj tech-stack (statisk + Tailwind eller Vite/Next.js)
-- [ ] Sätt upp navigering mellan huvudsida och galleri
+- [x] Sätt upp navigering mellan huvudsida och galleri
 - [ ] Implementera 2–3 UI-komponenter som MVP
 - [ ] Utvärdera och uppdatera checklistor efter varje milstolpe
