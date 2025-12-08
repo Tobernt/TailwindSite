@@ -1,9 +1,16 @@
+function getTranslator() {
+  const translate = (key) => window.i18n?.translate(key) ?? key;
+  const format = (key, replacements = {}) => window.i18n?.format(key, replacements) ?? translate(key);
+  return { format, translate };
+}
+
 function initToggle() {
   const toggle = document.querySelector('[data-toggle]');
   if (!toggle) return;
 
   const knob = toggle.querySelector('[data-toggle-knob]');
   const label = toggle.querySelector('[data-toggle-label]');
+  const { translate } = getTranslator();
 
   const updateState = (isOn) => {
     toggle.setAttribute('aria-pressed', String(isOn));
@@ -13,16 +20,21 @@ function initToggle() {
     knob?.classList.toggle('bg-emerald-300', isOn);
     knob?.classList.toggle('text-neutral-900', isOn);
     if (knob) {
-      knob.textContent = isOn ? 'På' : 'Av';
+      knob.textContent = translate(isOn ? 'toggle.on' : 'toggle.off');
     }
     if (label) {
-      label.textContent = isOn ? 'Aktiverad' : 'Av';
+      label.textContent = translate(isOn ? 'toggle.label.on' : 'toggle.label.off');
     }
   };
 
   toggle.addEventListener('click', () => {
     const isOn = toggle.getAttribute('aria-pressed') === 'true';
     updateState(!isOn);
+  });
+
+  document.addEventListener('i18n:languagechange', () => {
+    const isOn = toggle.getAttribute('aria-pressed') === 'true';
+    updateState(isOn);
   });
 }
 
@@ -31,14 +43,19 @@ function initSlider() {
   const output = document.querySelector('[data-slider-value]');
   if (!slider || !output) return;
 
+  const { format, translate } = getTranslator();
+
   const sync = () => {
     const value = slider.value;
-    output.textContent = `${value}%`;
-    slider.setAttribute('aria-valuetext', `${value} procent`);
+    output.textContent = format('slider.value', { value });
+    slider.setAttribute('aria-valuetext', format('slider.aria', { value }));
+    slider.setAttribute('aria-label', translate('gallery.slider.label') ?? slider.getAttribute('aria-label'));
   };
 
   slider.addEventListener('input', sync);
   sync();
+
+  document.addEventListener('i18n:languagechange', sync);
 }
 
 function initAccordion() {
@@ -63,6 +80,8 @@ function initGradient() {
   const card = document.querySelector('[data-gradient-card]');
   if (!toggle || !card) return;
 
+  const { translate } = getTranslator();
+
   const gradientClasses = [
     'bg-gradient-to-r',
     'from-emerald-500/15',
@@ -75,7 +94,7 @@ function initGradient() {
 
   const updateState = (isActive) => {
     toggle.setAttribute('aria-pressed', String(isActive));
-    toggle.textContent = isActive ? 'Stäng gradient' : 'Aktivera gradient';
+    toggle.textContent = translate(isActive ? 'gradient.deactivate' : 'gradient.activate');
     card.classList.toggle('bg-neutral-900/70', !isActive);
     gradientClasses.forEach((cls) => card.classList.toggle(cls, isActive));
   };
@@ -86,6 +105,11 @@ function initGradient() {
   });
 
   updateState(false);
+
+  document.addEventListener('i18n:languagechange', () => {
+    const active = toggle.getAttribute('aria-pressed') === 'true';
+    updateState(active);
+  });
 }
 
 function initModal() {
@@ -223,28 +247,41 @@ function initDemoForm() {
   const feedback = form?.querySelector('[data-form-feedback]');
   if (!form || !feedback) return;
 
+  const { translate } = getTranslator();
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const fields = Array.from(form.querySelectorAll('input, select'));
     const allValid = fields.every((field) => validateField(field));
 
     if (!allValid) {
-      feedback.textContent = 'Kontrollera e-post och roll innan du fortsätter.';
+      feedback.textContent = translate('form.invalid');
       feedback.classList.add('text-amber-300');
       feedback.classList.remove('text-emerald-200');
       fields.find((f) => !f.checkValidity())?.focus();
       return;
     }
 
-    feedback.textContent = 'Allt ser bra ut! Formuläret är redo att skickas.';
+    feedback.textContent = translate('form.valid');
     feedback.classList.add('text-emerald-200');
     feedback.classList.remove('text-amber-300');
+  });
+
+  document.addEventListener('i18n:languagechange', () => {
+    const invalidField = form.querySelector('.border-red-500');
+    if (invalidField) {
+      feedback.textContent = translate('form.invalid');
+      feedback.classList.add('text-amber-300');
+      feedback.classList.remove('text-emerald-200');
+    }
   });
 }
 
 function initCopyCode() {
   const copyButtons = document.querySelectorAll('[data-copy-code]');
   if (!copyButtons.length) return;
+
+  const { translate } = getTranslator();
 
   copyButtons.forEach((button) => {
     const targetId = button.dataset.codeTarget;
@@ -258,9 +295,9 @@ function initCopyCode() {
 
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(text);
-        status.textContent = 'Kopierat till urklipp.';
+        status.textContent = translate('copy.success');
       } else {
-        status.textContent = 'Kopiering stöds inte i denna miljö.';
+        status.textContent = translate('copy.unsupported');
       }
     });
   });
@@ -271,22 +308,28 @@ function initContactForm() {
   const status = document.querySelector('[data-form-status]');
   if (!form || !status) return;
 
+  const { translate } = getTranslator();
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const fields = Array.from(form.querySelectorAll('input, textarea'));
     const allValid = fields.every((field) => validateField(field));
 
     if (!allValid) {
-      status.textContent = 'Fyll i alla fält för att skicka.';
+      status.textContent = translate('contact.invalid');
       status.classList.add('text-amber-300');
       status.classList.remove('text-emerald-200');
       fields.find((f) => !f.checkValidity())?.focus();
       return;
     }
 
-    status.textContent = 'Tack! Jag återkommer inom 24h med ett förslag.';
+    status.textContent = translate('contact.success');
     status.classList.add('text-emerald-200');
     status.classList.remove('text-amber-300');
+  });
+
+  document.addEventListener('i18n:languagechange', () => {
+    status.textContent = '';
   });
 }
 

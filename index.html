@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sv" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script type="module" src="assets/layout.js"></script>
+  <script type="module" src="assets/i18n.js"></script>
 </head>
 <body class="bg-neutral-900 text-neutral-100" data-page="home">
   <div data-site-header></div>
@@ -17,48 +18,44 @@
       <div class="absolute inset-0 -z-10 bg-radial-spot"></div>
       <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div class="space-y-6">
-          <p class="eyebrow">Fullstackutvecklare & problemlösare</p>
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Jag bygger tillgängliga produkter som levererar mätbar effekt.
+          <p class="eyebrow" data-i18n="hero.eyebrow">Full-stack developer & problem solver</p>
+          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-i18n="hero.title">
+            I build accessible products that deliver measurable impact.
           </h1>
-          <p class="text-lg text-neutral-300">
-            Full-stackutvecklare med fokus på automation, datasäkerhet och tydlig kommunikation mellan teknik och verksamhet.
-            Bygger och underhåller system i Python, C#, JavaScript och SQL – från prototyp till drift i produktion.
+          <p class="text-lg text-neutral-300" data-i18n="hero.lead">
+            Full-stack developer focused on automation, data security, and clear communication between engineering and the business. I build and maintain systems in Python, C#, JavaScript, and SQL—taking them from prototype to production.
           </p>
           <div class="flex flex-wrap items-center gap-4">
-            <a class="cta-button-primary" href="#contact">Boka ett kort samtal</a>
-            <a class="cta-button-ghost" href="gallery.html">Utforska UI-galleriet</a>
+            <a class="cta-button-primary" href="#contact" data-i18n="hero.ctaPrimary">Book a short call</a>
+            <a class="cta-button-ghost" href="gallery.html" data-i18n="hero.ctaSecondary">Explore the UI gallery</a>
           </div>
           <div class="flex flex-wrap gap-4 text-sm text-neutral-300">
-            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Olofström</span>
-            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100">Tillgänglig för uppdrag</span>
-            <span class="pill border-neutral-700 bg-neutral-800/70">Remote-first</span>
+            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100" data-i18n="hero.tag.location">Olofström</span>
+            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100" data-i18n="hero.tag.availability">Open for projects</span>
+            <span class="pill border-neutral-700 bg-neutral-800/70" data-i18n="hero.tag.remote">Remote-first</span>
           </div>
         </div>
         <div class="grid gap-4">
           <div class="card-panel space-y-3">
-            <p class="text-sm font-semibold text-neutral-100">Fokusområden</p>
+            <p class="text-sm font-semibold text-neutral-100" data-i18n="hero.focus.title">Focus areas</p>
             <ul class="space-y-2 text-neutral-200">
-              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Design systems i
-                Tailwind med audit-spår och dokumentation.</li>
-              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>Data pipelines med
-                kontraktstester, observability och rollback-planer.</li>
-              <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Produktledda
-                experiment med tydliga KPI:er och insiktsdashboards.</li>
+              <li class="flex items-start gap-3" data-i18n="hero.focus.design"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Design systems in Tailwind with audit trails and documentation.</li>
+              <li class="flex items-start gap-3" data-i18n="hero.focus.data"><span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>Data pipelines with contract tests, observability, and rollback plans.</li>
+              <li class="flex items-start gap-3" data-i18n="hero.focus.experiments"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>Product-led experiments with clear KPIs and insight dashboards.</li>
             </ul>
           </div>
           <div class="grid gap-4 sm:grid-cols-3">
             <div class="rounded-xl border border-emerald-500/30 bg-emerald-400/10 px-4 py-3 shadow-glow-emerald">
-              <p class="text-2xl font-bold text-emerald-200">Full-stack</p>
-              <p class="text-xs text-emerald-50/80">Python, C#, JavaScript, SQL och Flutter i produktion.</p>
+              <p class="text-2xl font-bold text-emerald-200" data-i18n="hero.summary.fullstack">Full-stack</p>
+              <p class="text-xs text-emerald-50/80" data-i18n="hero.summary.fullstackCopy">Python, C#, JavaScript, SQL, and Flutter in production.</p>
             </div>
             <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-3 shadow-glow-blue">
-              <p class="text-2xl font-bold text-blue-100">Automation</p>
-              <p class="text-xs text-blue-50/80">CI/CD, datakvalitet och scripts som minskar manuellt arbete.</p>
+              <p class="text-2xl font-bold text-blue-100" data-i18n="hero.summary.automation">Automation</p>
+              <p class="text-xs text-blue-50/80" data-i18n="hero.summary.automationCopy">CI/CD, data quality, and scripts that reduce manual work.</p>
             </div>
             <div class="rounded-xl border border-neutral-700 bg-neutral-900/80 px-4 py-3">
-              <p class="text-2xl font-bold text-neutral-50">Remote-first</p>
-              <p class="text-xs text-neutral-300">Vana vid distribuerade team och tydlig dokumentation.</p>
+              <p class="text-2xl font-bold text-neutral-50" data-i18n="hero.summary.remote">Remote-first</p>
+              <p class="text-xs text-neutral-300" data-i18n="hero.summary.remoteCopy">Experienced with distributed teams and clear documentation.</p>
             </div>
           </div>
         </div>
@@ -68,32 +65,31 @@
     <section id="about" class="section-shell">
       <div class="grid gap-8 lg:grid-cols-3 lg:items-start">
         <div class="lg:col-span-1 space-y-2">
-          <p class="eyebrow">Profil</p>
-          <h2 class="text-3xl font-bold text-white">Om mig</h2>
-          <p class="text-neutral-300">Nyfiken generalist som trivs i gränslandet mellan produkt, data och design.</p>
+          <p class="eyebrow" data-i18n="about.eyebrow">Profile</p>
+          <h2 class="text-3xl font-bold text-white" data-i18n="about.title">About me</h2>
+          <p class="text-neutral-300" data-i18n="about.subtitle">Curious generalist who thrives between product, data, and design.</p>
         </div>
         <div class="lg:col-span-2 space-y-4">
           <div class="card-panel">
-            <p class="text-neutral-200">
-              Versatil full-stackutvecklare med bakgrund inom media-data, automation och systemintegration. Jag arbetar nära både
-              instruktörer och slutanvändare, skriver kod som är enkel att felsöka och ser till att processer är mätbara och dokumenterade.
+            <p class="text-neutral-200" data-i18n="about.body">
+              Versatile full-stack developer with a background in media data, automation, and system integration. I work closely with both instructors and end users, write code that is easy to debug, and ensure processes are measurable and documented.
             </p>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
             <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4 space-y-2">
-              <p class="text-sm font-semibold text-neutral-100">Styrkor</p>
+              <p class="text-sm font-semibold text-neutral-100" data-i18n="about.strengths.title">Strengths</p>
               <ul class="space-y-2 text-sm text-neutral-300">
-                <li>Snabba experiment & MVP:er med tydlig KPI.</li>
-                <li>Översätter komplex teknik till beslutsunderlag.</li>
-                <li>Mentorskap, pairing och code review-ritualer.</li>
+                <li data-i18n="about.strengths.fast">Rapid experiments & MVPs with clear KPIs.</li>
+                <li data-i18n="about.strengths.translate">Translate complex tech into decision-ready narratives.</li>
+                <li data-i18n="about.strengths.mentorship">Mentorship, pairing, and consistent code reviews.</li>
               </ul>
             </div>
             <div class="rounded-xl border border-neutral-800 bg-neutral-900/60 p-4 space-y-2">
-              <p class="text-sm font-semibold text-neutral-100">Verktyg</p>
+              <p class="text-sm font-semibold text-neutral-100" data-i18n="about.tools.title">Tools</p>
               <ul class="space-y-2 text-sm text-neutral-300">
-                <li>GitHub Actions, Azure/AWS, Docker & k8s.</li>
-                <li>Supabase, PostgreSQL, Redis, OpenSearch.</li>
-                <li>Figma, Linear, Notion för tydlig spårbarhet.</li>
+                <li data-i18n="about.tools.devops">GitHub Actions, Azure/AWS, Docker & k8s.</li>
+                <li data-i18n="about.tools.databases">Supabase, PostgreSQL, Redis, OpenSearch.</li>
+                <li data-i18n="about.tools.product">Figma, Linear, Notion for clear traceability.</li>
               </ul>
             </div>
           </div>
@@ -105,77 +101,77 @@
       <div class="flex flex-col gap-6">
         <div class="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p class="eyebrow">Erfarenhet</p>
-            <h2 class="text-3xl font-bold text-white">Roller & resultat</h2>
-            <p class="text-sm text-neutral-400">Mätbara effekter på leveransflöden, kostnad och kvalitet.</p>
+            <p class="eyebrow" data-i18n="experience.eyebrow">Experience</p>
+            <h2 class="text-3xl font-bold text-white" data-i18n="experience.title">Roles & outcomes</h2>
+            <p class="text-sm text-neutral-400" data-i18n="experience.subtitle">Measurable effects on delivery flow, cost, and quality.</p>
           </div>
-          <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Se UI-exempel</a>
+          <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html" data-i18n="experience.cta">See UI examples</a>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Programming Assistant &amp; Developer, WeTeachIT</span>
-              <span>2025–Nu</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.assistant.title">Programming Assistant &amp; Developer, WeTeachIT</span>
+              <span data-i18n="experience.roles.assistant.dates">2025–Present</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Granskar och felsöker studentkod i Python, Java och C# samt coachar till bättre struktur.</li>
-              <li>Bygger interna full-stackverktyg i Flask och SQLite med säker autentisering.</li>
-              <li>Utvecklar modulärt multiplayer-ramverk i Unity/C# med egen nätverkslogik.</li>
-              <li>Samarbetar med instruktörer för skalbara och underhållbara undervisningsflöden.</li>
+              <li data-i18n="experience.roles.assistant.one">Review and debug student code in Python, Java, and C# while coaching toward better structure.</li>
+              <li data-i18n="experience.roles.assistant.two">Build internal full-stack tools in Flask and SQLite with secure authentication.</li>
+              <li data-i18n="experience.roles.assistant.three">Develop modular multiplayer framework in Unity/C# with custom networking.</li>
+              <li data-i18n="experience.roles.assistant.four">Collaborate with instructors to create scalable, maintainable teaching flows.</li>
             </ul>
           </article>
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Schedule Editor (Remote), Nielsen / Gracenote</span>
-              <span>2022–2023</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.editor.title">Schedule Editor (Remote), Nielsen / Gracenote</span>
+              <span data-i18n="experience.roles.editor.dates">2022–2023</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Automatiserade metadata- och TV-scheman vilket minskade manuellt arbete.</li>
-              <li>Säkerställde datakvalitet för svensk TV och VOD genom validering mot leverantörer.</li>
-              <li>Tog fram skript som förbättrade leveranstider och konsekvens i databasen.</li>
+              <li data-i18n="experience.roles.editor.one">Automated metadata and TV schedules, reducing manual work.</li>
+              <li data-i18n="experience.roles.editor.two">Ensured data quality for Swedish TV and VOD through supplier validation.</li>
+              <li data-i18n="experience.roles.editor.three">Created scripts that improved delivery times and consistency.</li>
             </ul>
           </article>
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Exchange Administrator / SME (Remote), Cognizant</span>
-              <span>2018–2021</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.exchange.title">Exchange Administrator / SME (Remote), Cognizant</span>
+              <span data-i18n="experience.roles.exchange.dates">2018–2021</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Hantera hybrida Microsoft Exchange-miljöer (2010–2019 och Exchange Online).</li>
-              <li>Automatiserade provisionering, köhantering och rapporter med PowerShell.</li>
-              <li>Byggde CLI-verktyg som kortade rapporttider från timmar till minuter.</li>
-              <li>Stödde regelefterlevnad, retention och migrering i globala team.</li>
+              <li data-i18n="experience.roles.exchange.one">Managed hybrid Microsoft Exchange environments (2010–2019 and Exchange Online).</li>
+              <li data-i18n="experience.roles.exchange.two">Automated provisioning, queue handling, and reporting with PowerShell.</li>
+              <li data-i18n="experience.roles.exchange.three">Built CLI tools that reduced reporting time from hours to minutes.</li>
+              <li data-i18n="experience.roles.exchange.four">Supported compliance, retention, and migrations in global teams.</li>
             </ul>
           </article>
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Enterprise Support &amp; Automation Specialist, Tech Mahindra</span>
-              <span>2017–2018</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.enterprise.title">Enterprise Support &amp; Automation Specialist, Tech Mahindra</span>
+              <span data-i18n="experience.roles.enterprise.dates">2017–2018</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Gav Tier 2-support för VPN, Lotus Notes och Active Directory.</li>
-              <li>Automatiserade kontoprovisionering och återställning av VPN.</li>
-              <li>Topp 3 i ett team om 50+ tekniker för problemlösningshastighet.</li>
+              <li data-i18n="experience.roles.enterprise.one">Delivered Tier 2 support for VPN, Lotus Notes, and Active Directory.</li>
+              <li data-i18n="experience.roles.enterprise.two">Automated account provisioning and VPN resets.</li>
+              <li data-i18n="experience.roles.enterprise.three">Ranked top 3 in a 50+ person team for problem-solving speed.</li>
             </ul>
           </article>
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Onsite Technician, InfoCare</span>
-              <span>2023</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.onsite.title">Onsite Technician, InfoCare</span>
+              <span data-i18n="experience.roles.onsite.dates">2023</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Levererade on-site IT-support och hårdvarudiagnostik i Sverige.</li>
-              <li>Koordinerade med leverantörer och användare för att minimera driftstopp.</li>
+              <li data-i18n="experience.roles.onsite.one">Delivered on-site IT support and hardware diagnostics in Sweden.</li>
+              <li data-i18n="experience.roles.onsite.two">Coordinated with vendors and users to minimize downtime.</li>
             </ul>
           </article>
           <article class="card-panel">
             <div class="flex items-center justify-between text-sm text-neutral-400">
-              <span class="font-semibold text-neutral-200">Producer / Founder, Royal Hand Studios</span>
-              <span>2014–2015</span>
+              <span class="font-semibold text-neutral-200" data-i18n="experience.roles.producer.title">Producer / Founder, Royal Hand Studios</span>
+              <span data-i18n="experience.roles.producer.dates">2014–2015</span>
             </div>
             <ul class="mt-3 space-y-2 text-neutral-300 text-sm">
-              <li>Ledde digitala produktioner; erhöll Culture Award 2014 och nominerad Årets entreprenör 2015.</li>
-              <li>Ansvarade för projektledning, kundkontakt och leverans av kreativa medieuppdrag.</li>
+              <li data-i18n="experience.roles.producer.one">Led digital productions; received Culture Award 2014 and nominated Entrepreneur of the Year 2015.</li>
+              <li data-i18n="experience.roles.producer.two">Handled project management, client relations, and delivery of creative media work.</li>
             </ul>
           </article>
         </div>
@@ -185,19 +181,19 @@
     <section id="education" class="section-shell">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
         <div class="space-y-3">
-          <p class="eyebrow">Utbildning & färdigheter</p>
-          <h2 class="text-3xl font-bold text-white">Lifelong learning</h2>
-          <p class="text-neutral-300">Jag håller verktygslådan uppdaterad och dokumenterar lärdomar så att teamet slipper gissa.</p>
+          <p class="eyebrow" data-i18n="education.eyebrow">Education & skills</p>
+          <h2 class="text-3xl font-bold text-white" data-i18n="education.title">Lifelong learning</h2>
+          <p class="text-neutral-300" data-i18n="education.subtitle">I keep the toolbox current and document learnings so the team never has to guess.</p>
           <div class="card-panel">
-            <p class="text-sm font-semibold text-neutral-100">Högre yrkesexamen – Mjukvaruutveckling</p>
-            <p class="text-sm text-neutral-400">MÖLK Yrkeshögskola, Linköping • 400/400 YH-poäng</p>
-            <p class="mt-2 text-sm text-neutral-300">Fokus på OOP, agila team, databaser, GUI-design och algoritmer. Distinktion i 12 av 14 kurser.</p>
-            <p class="mt-2 text-sm text-neutral-300">Examensprojekt: modulärt multiplayer-system i C#.</p>
+            <p class="text-sm font-semibold text-neutral-100" data-i18n="education.degree">Higher Vocational Degree – Software Development</p>
+            <p class="text-sm text-neutral-400" data-i18n="education.school">MÖLK Vocational College, Linköping • 400/400 credits</p>
+            <p class="mt-2 text-sm text-neutral-300" data-i18n="education.focus">Focus on OOP, agile teams, databases, GUI design, and algorithms. Distinction in 12 of 14 courses.</p>
+            <p class="mt-2 text-sm text-neutral-300" data-i18n="education.project">Thesis: modular multiplayer system in C#.</p>
           </div>
         </div>
         <div class="space-y-4">
           <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 space-y-3">
-            <p class="text-sm font-semibold text-neutral-100">Teknikstack</p>
+            <p class="text-sm font-semibold text-neutral-100" data-i18n="education.stack.title">Tech stack</p>
             <div class="flex flex-wrap gap-2 text-xs text-emerald-200">
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">Python</span>
               <span class="rounded-full border border-emerald-400/50 px-3 py-1">C#</span>
@@ -210,14 +206,14 @@
             </div>
           </div>
           <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 space-y-3">
-            <p class="text-sm font-semibold text-neutral-100">Verktyg & metoder</p>
+            <p class="text-sm font-semibold text-neutral-100" data-i18n="education.tools.title">Tools & methods</p>
             <div class="grid grid-cols-2 gap-3 text-sm text-neutral-300">
-              <span>CI/CD & DevOps</span>
-              <span>Design systems</span>
-              <span>Agila arbetssätt</span>
-              <span>Observability</span>
-              <span>DX audits</span>
-              <span>A/B-testning</span>
+              <span data-i18n="education.tools.cicd">CI/CD & DevOps</span>
+              <span data-i18n="education.tools.design">Design systems</span>
+              <span data-i18n="education.tools.agile">Agile practices</span>
+              <span data-i18n="education.tools.observability">Observability</span>
+              <span data-i18n="education.tools.audit">DX audits</span>
+              <span data-i18n="education.tools.ab">A/B testing</span>
             </div>
           </div>
         </div>
@@ -228,57 +224,57 @@
       <div class="flex flex-col gap-6">
         <div class="flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <p class="eyebrow">Projekt</p>
-            <h2 class="text-3xl font-bold text-white">Utvalda case</h2>
-            <p class="text-sm text-neutral-400">Case med både resultat och kodbeskrivningar.</p>
+            <p class="eyebrow" data-i18n="projects.eyebrow">Projects</p>
+            <h2 class="text-3xl font-bold text-white" data-i18n="projects.title">Selected cases</h2>
+            <p class="text-sm text-neutral-400" data-i18n="projects.subtitle">Cases with both outcomes and code notes.</p>
           </div>
-          <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html">Mer UI-inspiration</a>
+          <a class="text-sm text-blue-400 hover:text-blue-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300" href="gallery.html" data-i18n="projects.cta">More UI inspiration</a>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           <article class="card-panel space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">AI Video Generator</h3>
-              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Automation</span>
+              <h3 class="text-xl font-semibold text-white" data-i18n="projects.items.video.title">AI Video Generator</h3>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="projects.items.video.tag">Automation</span>
             </div>
-            <p class="text-sm text-neutral-300">AI-driven videopipeline med finjusterad styrning av metadata, storyboard och voice-over.</p>
-            <p class="text-xs text-neutral-400">Stack: Python, Flask, Tailwind</p>
-            <p class="text-sm text-emerald-200">Resultat: Kortare produktionscykler och mer konsekventa leveranser.</p>
+            <p class="text-sm text-neutral-300" data-i18n="projects.items.video.summary">AI-driven video pipeline with finely tuned metadata, storyboards, and voice-over.</p>
+            <p class="text-xs text-neutral-400" data-i18n="projects.items.video.stack">Stack: Python, Flask, Tailwind</p>
+            <p class="text-sm text-emerald-200" data-i18n="projects.items.video.result">Outcome: Shorter production cycles and more consistent deliveries.</p>
           </article>
           <article class="card-panel space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">Day Trading App</h3>
-              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Realtime</span>
+              <h3 class="text-xl font-semibold text-white" data-i18n="projects.items.trading.title">Day Trading App</h3>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="projects.items.trading.tag">Realtime</span>
             </div>
-            <p class="text-sm text-neutral-300">Automatiserad strategi som anpassar sig till trend- och callsign-skiften med notifieringar.</p>
-            <p class="text-xs text-neutral-400">Stack: JavaScript, Supabase, React</p>
-            <p class="text-sm text-emerald-200">Resultat: Snabbare signaldistribution och optimerade kostnader.</p>
+            <p class="text-sm text-neutral-300" data-i18n="projects.items.trading.summary">Automated strategy that adapts to trend and call-sign shifts with notifications.</p>
+            <p class="text-xs text-neutral-400" data-i18n="projects.items.trading.stack">Stack: JavaScript, Supabase, React</p>
+            <p class="text-sm text-emerald-200" data-i18n="projects.items.trading.result">Outcome: Faster signal distribution and optimized costs.</p>
           </article>
           <article class="card-panel space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">Multiplayer Game Architecture</h3>
-              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100">Scale</span>
+              <h3 class="text-xl font-semibold text-white" data-i18n="projects.items.multiplayer.title">Multiplayer Game Architecture</h3>
+              <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="projects.items.multiplayer.tag">Scale</span>
             </div>
-            <p class="text-sm text-neutral-300">Modulärt full-stacksystem med Unity-verktyg och egen nätverksstack för låg latency.</p>
-            <p class="text-xs text-neutral-400">Stack: C#, Unity, SignalR, Redis</p>
-            <p class="text-sm text-emerald-200">Resultat: Färre disconnects och bättre spelkänsla.</p>
+            <p class="text-sm text-neutral-300" data-i18n="projects.items.multiplayer.summary">Modular full-stack system with Unity tooling and a custom low-latency network stack.</p>
+            <p class="text-xs text-neutral-400" data-i18n="projects.items.multiplayer.stack">Stack: C#, Unity, SignalR, Redis</p>
+            <p class="text-sm text-emerald-200" data-i18n="projects.items.multiplayer.result">Outcome: Fewer disconnects and a smoother player experience.</p>
           </article>
           <article class="card-panel space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">Android Incremental Game</h3>
-              <span class="pill border-neutral-700">Mobile</span>
+              <h3 class="text-xl font-semibold text-white" data-i18n="projects.items.android.title">Android Incremental Game</h3>
+              <span class="pill border-neutral-700" data-i18n="projects.items.android.tag">Mobile</span>
             </div>
-            <p class="text-sm text-neutral-300">Mobilspel med ekonomi-loopar, analytics och lokal lagring.</p>
-            <p class="text-xs text-neutral-400">Stack: Flutter, SQLite</p>
-            <p class="text-sm text-emerald-200">Resultat: Iterativ UI-testning gav förbättrad retention.</p>
+            <p class="text-sm text-neutral-300" data-i18n="projects.items.android.summary">Mobile game with economy loops, analytics, and local storage.</p>
+            <p class="text-xs text-neutral-400" data-i18n="projects.items.android.stack">Stack: Flutter, SQLite</p>
+            <p class="text-sm text-emerald-200" data-i18n="projects.items.android.result">Outcome: Iterative UI testing improved retention.</p>
           </article>
           <article class="card-panel space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">Tailwind &amp; React Job Application</h3>
-              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100">Frontend</span>
+              <h3 class="text-xl font-semibold text-white" data-i18n="projects.items.tailwind.title">Tailwind &amp; React Job Application</h3>
+              <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="projects.items.tailwind.tag">Frontend</span>
             </div>
-            <p class="text-sm text-neutral-300">Det här portfolio-projektet byggt i Tailwind och React för att presentera kompetens och case för ansökan.</p>
-            <p class="text-xs text-neutral-400">Stack: React, Tailwind CSS</p>
-            <p class="text-sm text-emerald-200">Resultat: Snabb prototyp som visar komponentbibliotek, UI-detaljer och responsivitet.</p>
+            <p class="text-sm text-neutral-300" data-i18n="projects.items.tailwind.summary">This portfolio project built in Tailwind and React to present skills and cases for applications.</p>
+            <p class="text-xs text-neutral-400" data-i18n="projects.items.tailwind.stack">Stack: React, Tailwind CSS</p>
+            <p class="text-sm text-emerald-200" data-i18n="projects.items.tailwind.result">Outcome: Fast prototype showing component library, UI polish, and responsiveness.</p>
           </article>
         </div>
       </div>
@@ -287,36 +283,36 @@
     <section id="contact" class="py-section">
       <div class="grid gap-8 rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 px-8 py-10 shadow-xl shadow-blue-500/20 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div class="space-y-4">
-          <p class="eyebrow">UI-galleri</p>
-          <h2 class="text-3xl font-bold text-white">Redo att börja ett projekt?</h2>
-          <p class="text-neutral-300">Boka en genomgång av dina utmaningar eller be om en liten prototyp. Jag återkommer inom en arbetsdag.</p>
+          <p class="eyebrow" data-i18n="contact.eyebrow">UI gallery</p>
+          <h2 class="text-3xl font-bold text-white" data-i18n="contact.title">Ready to start a project?</h2>
+          <p class="text-neutral-300" data-i18n="contact.subtitle">Book a walkthrough of your challenges or request a small prototype. I respond within one business day.</p>
           <div class="flex flex-wrap gap-3">
-            <a class="cta-button-primary" href="mailto:tobias_berntsson@hotmail.com">Boka en genomgång</a>
-            <a class="cta-button-ghost" href="gallery.html">Utforska lösningar i galleriet</a>
+            <a class="cta-button-primary" href="mailto:tobias_berntsson@hotmail.com" data-i18n="contact.ctaPrimary">Book a walkthrough</a>
+            <a class="cta-button-ghost" href="gallery.html" data-i18n="contact.ctaSecondary">Explore solutions in the gallery</a>
           </div>
           <div class="flex flex-wrap gap-3 text-xs text-neutral-400">
-            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100">Tillgänglig för workshop</span>
-            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100">Svar inom 24h</span>
-            <span class="pill">Inkl. inspelad demo</span>
+            <span class="pill border-emerald-400/60 bg-emerald-400/10 text-emerald-100" data-i18n="contact.tag.workshop">Available for workshops</span>
+            <span class="pill border-blue-400/60 bg-blue-500/10 text-blue-100" data-i18n="contact.tag.response">Reply within 24h</span>
+            <span class="pill" data-i18n="contact.tag.demo">Includes recorded demo</span>
           </div>
         </div>
         <form class="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6" id="contact-form" novalidate>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-neutral-100">Kontaktformulär</p>
-            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200">WCAG testat</span>
+            <p class="text-sm font-semibold text-neutral-100" data-i18n="contact.form.title">Contact form</p>
+            <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-200" data-i18n="contact.form.tag">WCAG tested</span>
           </div>
-          <label class="block text-sm text-neutral-200" for="name">Namn
+          <label class="block text-sm text-neutral-200" for="name" data-i18n="contact.form.name">Name
             <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="name" name="name" required />
           </label>
-          <label class="block text-sm text-neutral-200" for="email">E-post
+          <label class="block text-sm text-neutral-200" for="email" data-i18n="contact.form.email">Email
             <input class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="email" name="email" type="email" required />
           </label>
-          <label class="block text-sm text-neutral-200" for="message">Vad vill du uppnå?
+          <label class="block text-sm text-neutral-200" for="message" data-i18n="contact.form.message">What do you want to achieve?
             <textarea class="mt-2 w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-sm text-neutral-100" id="message" name="message" rows="4" required></textarea>
           </label>
-          <p class="text-xs text-neutral-400">Korten sparas inte – formuläret visar bara hur validering och fokus fungerar.</p>
+          <p class="text-xs text-neutral-400" data-i18n="contact.form.note">Nothing is saved—this form only shows how validation and focus behave.</p>
           <div class="flex flex-wrap gap-3">
-            <button type="submit" class="cta-button-primary">Skicka</button>
+            <button type="submit" class="cta-button-primary" data-i18n="contact.form.submit">Send</button>
             <div class="text-sm text-emerald-200" role="status" aria-live="polite" data-form-status></div>
           </div>
         </form>
