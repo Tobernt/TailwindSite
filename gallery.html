@@ -15,7 +15,7 @@
 
   <main class="max-w-6xl mx-auto px-6">
     <section class="py-16 border-b border-neutral-800">
-      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <p class="text-sm font-semibold text-emerald-300 uppercase tracking-wide" data-i18n="gallery.hero.eyebrow">Components</p>
           <h1 class="text-4xl font-bold text-white" data-i18n="gallery.hero.title">UI gallery</h1>
@@ -27,18 +27,18 @@
 
     <section class="py-16">
       <div class="space-y-6">
-        <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p class="eyebrow" data-i18n="gallery.section.eyebrow">Design systems</p>
             <h2 class="text-3xl font-bold text-white" data-i18n="gallery.section.title">Interactive components</h2>
             <p class="text-sm text-neutral-400" data-i18n="gallery.section.subtitle">Grid overview of reusable UI patterns with short code explanations.</p>
           </div>
-          <a class="cta-button-ghost" href="index.html#projects" data-i18n="gallery.section.cta">Back to projects</a>
+          <a class="cta-button-ghost w-full text-center sm:w-auto" href="index.html#projects" data-i18n="gallery.section.cta">Back to projects</a>
         </div>
 
         <div class="grid gap-6 lg:grid-cols-2">
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.toggle.title">Smooth toggle</h2>
               <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="gallery.toggle.tag">Interactive</span>
             </div>
@@ -61,7 +61,7 @@
               </button>
               <p class="text-xs text-neutral-400" data-i18n="gallery.toggle.note">Uses <code class="text-emerald-300">aria-pressed</code> to announce the state.</p>
             </div>
-            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-pressed="false" class="toggle"&gt;
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;button aria-pressed="false" class="toggle"&gt;
   &lt;span class="sr-only"&gt;Toggle notifications&lt;/span&gt;
   &lt;span class="knob"&gt;On&lt;/span&gt;
   &lt;span class="label"&gt;On&lt;/span&gt;
@@ -69,7 +69,7 @@
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.slider.title">Slider with live value</h2>
               <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="gallery.slider.tag">Feedback</span>
             </div>
@@ -91,13 +91,13 @@
                 <span class="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-100" aria-live="polite" data-slider-value></span>
               </div>
             </div>
-            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;label for="volume"&gt;Choose level&lt;/label&gt;
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;label for="volume"&gt;Choose level&lt;/label&gt;
 &lt;input id="volume" type="range" aria-label="Choose level" /&gt;
 &lt;span aria-live="polite"&gt;45%&lt;/span&gt;</code></pre>
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.gradient.title">Gradient CTA</h2>
               <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="gallery.gradient.tag">Visual</span>
             </div>
@@ -106,13 +106,13 @@
               <p class="text-sm text-neutral-200" data-i18n="gallery.gradient.body">The gradient is WCAG AA tested against text and activates with the button below.</p>
               <button type="button" data-gradient-toggle class="cta-button-primary" data-i18n="gallery.gradient.button">Activate gradient</button>
             </div>
-            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;div class="cta" data-gradient-card&gt;...
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;div class="cta" data-gradient-card&gt;...
   &lt;button data-gradient-toggle&gt;Activate&lt;/button&gt;
 &lt;/div&gt;</code></pre>
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.accordion.title">Accordion</h2>
               <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="gallery.accordion.tag">Structure</span>
             </div>
@@ -134,12 +134,12 @@
                 </div>
               </div>
             </div>
-            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button aria-expanded="false" aria-controls="panel"&gt;Question&lt;/button&gt;
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;button aria-expanded="false" aria-controls="panel"&gt;Question&lt;/button&gt;
 &lt;div id="panel" hidden&gt;Answer&lt;/div&gt;</code></pre>
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.modal.title">Modal / lightbox</h2>
               <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="gallery.modal.tag">Overlay</span>
             </div>
@@ -183,12 +183,12 @@
                 </div>
               </div>
             </div>
-            <pre class="mt-4 rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>&lt;button data-open-modal&gt;Show modal&lt;/button&gt;
+            <pre class="mt-4 overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200 whitespace-pre-wrap"><code>&lt;button data-open-modal&gt;Show modal&lt;/button&gt;
 &lt;div role="dialog" aria-modal="true" hidden&gt;Content&lt;/div&gt;</code></pre>
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.tabs.title">Tabs with keyboard</h2>
               <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="gallery.tabs.tag">Navigation</span>
             </div>
@@ -206,7 +206,7 @@
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.form.title">Form with validation</h2>
               <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="gallery.form.tag">Form</span>
             </div>
@@ -242,17 +242,17 @@
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.copy.title">Copy code block</h2>
               <span class="pill border-blue-400/40 bg-blue-500/10 text-blue-100" data-i18n="gallery.copy.tag">Productivity</span>
             </div>
             <p class="mt-3 text-sm text-neutral-300" data-i18n="gallery.copy.summary">Copy button grabs code content and announces success for the user.</p>
             <div class="mt-4 space-y-2 rounded-xl border border-neutral-800 bg-neutral-900/60 p-4">
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <p class="text-sm font-semibold text-neutral-100" data-i18n="gallery.copy.label">API client</p>
                 <button type="button" class="pill" data-copy-code data-code-target="code-snippet" data-i18n="gallery.copy.button">Copy code</button>
               </div>
-              <pre id="code-snippet" class="text-xs text-neutral-200"><code>fetch("/api/data")
+              <pre id="code-snippet" class="overflow-x-auto rounded-xl bg-neutral-950/60 p-4 text-xs text-neutral-200"><code>fetch("/api/data")
   .then((res) =&gt; res.json())
   .then(console.log);
 </code></pre>
@@ -261,13 +261,13 @@
           </article>
 
           <article class="card-panel">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="text-xl font-semibold text-white" data-i18n="gallery.contact.title">Contact card</h2>
               <span class="pill border-emerald-500/40 bg-emerald-500/10 text-emerald-100" data-i18n="gallery.contact.tag">CTA</span>
             </div>
             <p class="mt-3 text-sm text-neutral-300" data-i18n="gallery.contact.summary">Interactive contact card that mirrors the site form but stays stateless.</p>
             <div class="mt-4 space-y-3 rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5">
-              <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-3">
                 <div>
                   <p class="text-sm font-semibold text-neutral-100" data-i18n="gallery.contact.name">Tobias Berntsson</p>
                   <p class="text-xs text-neutral-400" data-i18n="gallery.contact.role">Full-stack developer & teacher</p>

@@ -89,38 +89,45 @@ function setupMenuToggle(header) {
   const panel = header.querySelector('[data-menu-panel]');
   if (!toggle || !panel) return;
 
-  const setState = (isOpen) => {
+  const applyPanelState = (isOpen) => {
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    if (isDesktop) {
+      panel.classList.remove('hidden', 'opacity-0');
+      panel.classList.add('opacity-100');
+      updateMenuToggleLabels(toggle, false);
+      return;
+    }
+
     panel.classList.toggle('hidden', !isOpen);
     panel.classList.toggle('opacity-100', isOpen);
     panel.classList.toggle('opacity-0', !isOpen);
     updateMenuToggleLabels(toggle, isOpen);
   };
 
-  setState(false);
+  applyPanelState(false);
 
   toggle.addEventListener('click', () => {
-    const isOpen = panel.classList.contains('hidden');
-    setState(isOpen);
+    const isOpen = !panel.classList.contains('hidden');
+    applyPanelState(!isOpen);
   });
 
   panel.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       if (window.matchMedia('(min-width: 1024px)').matches) return;
-      setState(false);
+      applyPanelState(false);
     });
   });
 
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Escape') {
-      setState(false);
+      applyPanelState(false);
     }
   });
 
   const desktopQuery = window.matchMedia('(min-width: 1024px)');
   desktopQuery.addEventListener('change', (event) => {
-    if (event.matches) {
-      setState(false);
-    }
+    if (event.matches) applyPanelState(false);
   });
 
   document.addEventListener('i18n:languagechange', () => {
