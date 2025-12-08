@@ -150,7 +150,7 @@ const translations = {
     'contact.ctaPrimary': 'Boka en genomgång',
     'contact.ctaSecondary': 'Utforska lösningar i galleriet',
     'contact.tag.workshop': 'Tillgänglig för workshop',
-    'contact.tag.response': 'Svar inom 24h',
+    'contact.tag.response': 'Svarar så snart som möjligt',
     'contact.tag.demo': 'Inkl. inspelad demo',
     'contact.form.title': 'Kontaktformulär',
     'contact.form.tag': 'WCAG testat',
