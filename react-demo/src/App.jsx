@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import CmsDemoPage from './pages/CmsDemoPage';
+import GraphqlDemoPage from './pages/GraphqlDemoPage';
 import HomePage from './pages/HomePage';
 
 function AppLayout({ children }) {
@@ -19,6 +20,7 @@ export default function App() {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="cms-demo" element={<CmsDemoPage />} />
+          <Route path="graphql-demo" element={<GraphqlDemoPage />} />
         </Routes>
       </AppLayout>
     </BrowserRouter>
