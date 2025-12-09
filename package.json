@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --watch",
-    "build": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --minify",
+    "build": "npm run build:tailwind && npm run build:react-demo",
+    "build:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --minify",
+    "build:react-demo": "npm --prefix react-demo run build",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "serve:test": "http-server -p 4173 .",
