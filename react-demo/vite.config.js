@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 const rootDir = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
-  base: '/react-demo/',
+  base: './',
   resolve: {
     alias: {
       'design-system': resolve(rootDir, '../design-system'),

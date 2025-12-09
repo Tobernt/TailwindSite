@@ -16,7 +16,7 @@ Static, multi-page Tailwind site with a home page and UI gallery.
    npm run dev
    ```
    Open `index.html` or `gallery.html` in a local server (e.g., `python -m http.server 3000`).
-3. Create a production CSS build:
+3. Create a production CSS build (this also builds the React demo bundle to `react-demo/dist`):
    ```bash
    npm run build
    ```
