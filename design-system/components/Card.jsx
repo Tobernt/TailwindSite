@@ -3,12 +3,13 @@ import clsx from 'clsx';
 
 const baseClasses = 'rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 shadow-xl shadow-black/20';
 
-export default function Card({ title, eyebrow, children, className }) {
+export function Card({ title, eyebrow, children, className, footer }) {
   return (
     <div className={clsx(baseClasses, className)}>
       {eyebrow && <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 mb-2">{eyebrow}</p>}
       {title && <h3 className="text-lg font-semibold text-white mb-3">{title}</h3>}
       <div className="text-sm text-neutral-200 leading-relaxed space-y-2">{children}</div>
+      {footer && <div className="mt-4 border-t border-neutral-800 pt-3 text-sm text-neutral-300">{footer}</div>}
     </div>
   );
 }
@@ -16,6 +17,7 @@ export default function Card({ title, eyebrow, children, className }) {
 Card.propTypes = {
   title: PropTypes.string,
   eyebrow: PropTypes.string,
+  footer: PropTypes.node,
   children: PropTypes.node,
   className: PropTypes.string,
 };

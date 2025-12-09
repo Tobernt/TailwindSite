@@ -1,0 +1,6 @@
+{
+  "name": "design-system",
+  "private": true,
+  "type": "module",
+  "description": "Shared Tailwind React primitives reused across the React demo."
+}
