@@ -7,6 +7,7 @@ const links = [
   { href: '/cms-demo', label: 'CMS Demo' },
   { href: '/graphql-demo', label: 'GraphQL Demo' },
   { href: '/auth-demo', label: 'Auth Demo' },
+  { href: '/design-system', label: 'Design System' },
   { href: '/#components', label: 'Components' },
   { href: '/#interactions', label: 'Interactions' },
   { href: '/#guidance', label: 'Guidance' },
