@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import CmsDemoPage from './pages/CmsDemoPage';
+import AuthDemoPage from './pages/AuthDemoPage';
 import GraphqlDemoPage from './pages/GraphqlDemoPage';
 import HomePage from './pages/HomePage';
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="cms-demo" element={<CmsDemoPage />} />
           <Route path="graphql-demo" element={<GraphqlDemoPage />} />
+          <Route path="auth-demo" element={<AuthDemoPage />} />
         </Routes>
       </AppLayout>
     </BrowserRouter>
