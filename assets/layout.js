@@ -5,7 +5,7 @@ const NAV_ITEMS = [
   { href: '#about', label: 'About', key: 'about', anchor: true, i18n: 'nav.about' },
   { href: '#experience', label: 'Experience', key: 'experience', anchor: true, i18n: 'nav.experience' },
   { href: 'gallery.html', label: 'UI Gallery', key: 'gallery', i18n: 'nav.gallery' },
-  { href: 'react-demo/index.html', label: 'React Demo', key: 'react-demo' },
+  { href: '/react-demo/index.html', label: 'React Demo', key: 'react-demo' },
   { href: '#contact', label: 'Contact', key: 'contact', anchor: true, i18n: 'nav.contact' },
 ];
 

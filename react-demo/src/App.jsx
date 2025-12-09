@@ -1,237 +1,157 @@
-import { useMemo, useState } from 'react';
-import { Accordion, Badge, Button, Card, Input, Modal } from '../../design-system';
-import Navbar from './components/Navbar.jsx';
+import { useState } from 'react';
+import { Button } from './components/Button';
+import { Card } from './components/Card';
+import { Navbar } from './components/Navbar';
 
-function Stat({ label, value }) {
+function CounterPanel() {
+  const [count, setCount] = useState(0);
+  const [isOn, setIsOn] = useState(true);
+
   return (
-    <div className="rounded-xl border border-neutral-800 bg-neutral-900/70 px-4 py-3 text-center">
-      <p className="text-sm text-neutral-400">{label}</p>
-      <p className="text-2xl font-semibold text-white">{value}</p>
+    <div className="grid gap-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p className="text-sm text-neutral-400">Stateful demo</p>
+          <h3 className="text-2xl font-semibold text-white">Counter & toggle</h3>
+        </div>
+        <Button variant="ghost" onClick={() => setCount(0)}>
+          Reset
+        </Button>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-4">
+          <p className="text-sm text-neutral-300">Counter value</p>
+          <p className="text-4xl font-bold text-white">{count}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Button onClick={() => setCount((value) => value + 1)}>Increment</Button>
+            <Button variant="subtle" onClick={() => setCount((value) => Math.max(0, value - 1))}>
+              Decrement
+            </Button>
+          </div>
+        </div>
+        <div className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-4">
+          <p className="text-sm text-neutral-300">Feature toggle</p>
+          <p className="text-3xl font-semibold text-white">{isOn ? 'Enabled' : 'Disabled'}</p>
+          <div className="mt-4 inline-flex items-center gap-3">
+            <label className="inline-flex cursor-pointer items-center gap-3">
+              <span className="text-sm text-neutral-200">Toggle</span>
+              <span
+                role="switch"
+                aria-checked={isOn}
+                tabIndex={0}
+                onClick={() => setIsOn((value) => !value)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    setIsOn((value) => !value);
+                  }
+                }}
+                className={`${isOn ? 'bg-emerald-500' : 'bg-neutral-700'} relative inline-flex h-7 w-14 items-center rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300`}
+              >
+                <span
+                  className={`${isOn ? 'translate-x-7' : 'translate-x-1'} inline-block h-5 w-5 rounded-full bg-neutral-950 transition-transform`}
+                />
+              </span>
+            </label>
+            <Button variant="ghost" onClick={() => setIsOn(true)}>
+              Turn on
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-function CounterCard() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <Card eyebrow="State" title="Counter demo" className="h-full">
-      <p>Click the buttons to update stateful values.</p>
-      <div className="mt-4 flex items-center gap-3">
-        <Button variant="ghost" onClick={() => setCount((n) => Math.max(0, n - 1))}>
-          Decrease
-        </Button>
-        <Button onClick={() => setCount((n) => n + 1)}>Increase</Button>
-        <span className="text-lg font-semibold text-emerald-200">{count}</span>
-      </div>
-    </Card>
-  );
-}
-
-function ToggleCard() {
-  const [enabled, setEnabled] = useState(true);
-  const statusLabel = enabled ? 'Enabled' : 'Disabled';
-
-  return (
-    <Card eyebrow="State" title="Toggle demo" className="h-full">
-      <p>A simple toggle switch built with utility classes and React state.</p>
-      <div className="mt-4 inline-flex items-center gap-3 rounded-full border border-neutral-800 bg-neutral-900/80 px-4 py-3">
-        <button
-          type="button"
-          onClick={() => setEnabled((value) => !value)}
-          className={
-            'relative h-9 w-16 rounded-full border border-neutral-700 bg-neutral-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400'
-          }
-        >
-          <span
-            className={`absolute left-1 top-1 h-7 w-7 rounded-full bg-white transition ${
-              enabled ? 'translate-x-7 bg-emerald-400 shadow-glow-emerald/70' : ''
-            }`}
-          />
-        </button>
-        <span className="text-sm font-medium text-neutral-200">{statusLabel}</span>
-      </div>
-    </Card>
-  );
-}
-
 export default function App() {
-  const [inviteOpen, setInviteOpen] = useState(false);
-  const highlights = useMemo(
-    () => [
-      {
-        title: 'Reusable primitives',
-        body: 'Buttons and cards share the site Tailwind presets, so updates to the main config cascade here.',
-      },
-      {
-        title: 'Responsive navigation',
-        body: 'The navbar collapses into a mobile-friendly panel while keeping keyboard focus styling.',
-      },
-      {
-        title: 'State playground',
-        body: 'Counters and toggles demonstrate a simple React + Tailwind flow without extra dependencies.',
-      },
-    ],
-    []
-  );
-
-  const accordionItems = useMemo(
-    () => [
-      {
-        id: 'tokens',
-        title: 'Shared tokens',
-        content: 'Spacing, fonts, and colors flow from the Tailwind preset used across the site.',
-      },
-      {
-        id: 'accessibility',
-        title: 'Built for accessibility',
-        content: 'Each primitive ships with sensible aria attributes, keyboard support, and focus outlines.',
-      },
-      {
-        id: 'composition',
-        title: 'Composable React APIs',
-        content: 'Use props like as, variant, and size to adapt components without rewriting styles.',
-      },
-    ],
-    []
-  );
-
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       <Navbar />
-      <main>
-        <section id="hero" className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
-            <p className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100">
-              React + Tailwind
-              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
-            </p>
-            <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
-              Shared design system running in a Vite demo
+
+      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-10 md:px-6 md:pt-12">
+        <section className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-300">React + Tailwind</p>
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
+              Starter kit that reuses the site’s Tailwind theme.
             </h1>
             <p className="text-lg text-neutral-300">
-              This mini app reuses the portfolio Tailwind config so typography, spacing, and colors stay consistent across pages.
+              Explore reusable UI primitives, a responsive navbar, and interactive stateful patterns that match the portfolio’s
+              design language.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button as="a" href="#components">View components</Button>
-              <Button as="a" href="#state" variant="secondary">
-                Try the playground
+            <div className="flex flex-wrap gap-3">
+              <Button as="a" href="#components">
+                View components
+              </Button>
+              <Button as="a" href="https://tailwindcss.com/docs" variant="ghost">
+                Tailwind docs
               </Button>
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              <Stat label="Built with" value="Vite" />
-              <Stat label="Styling" value="Tailwind" />
-              <Stat label="JSX" value="React 18" />
-            </div>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/60 p-6 shadow-2xl">
-            <div className="absolute inset-0 -z-10 bg-grid-slate bg-[length:22px_22px] opacity-20" />
-            <div className="absolute inset-0 -z-10 bg-radial-spot" />
-            <div className="space-y-4">
-              <Card eyebrow="Tailwind preset" title="Shared tokens">
-                <p>
-                  The Tailwind config for this demo pulls from <code>../tailwind.config.js</code>, so your design tokens stay in one
-                  place.
-                </p>
-              </Card>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Card title="Buttons">
-                  <div className="flex flex-wrap gap-2">
-                    <Button size="sm">Primary</Button>
-                    <Button variant="secondary">Secondary</Button>
-                    <Button variant="ghost">Ghost</Button>
-                  </div>
-                </Card>
-                <Card title="Cards">
-                  <p className="text-sm text-neutral-200">
-                    Cards wrap content with consistent padding, rounded corners, and subtle shadows.
-                  </p>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="components" className="section-shell space-y-6">
-          <div className="space-y-2">
-            <p className="eyebrow">UI kit</p>
-            <h2 className="text-3xl font-bold text-white">Reusable components</h2>
-            <p className="text-neutral-300">Drop these Button and Card building blocks into any React page.</p>
-          </div>
-          <div className="card-grid">
-            {highlights.map((item) => (
-              <Card key={item.title} title={item.title}>
-                <p>{item.body}</p>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section id="design-system" className="section-shell space-y-6">
-          <div className="space-y-2">
-            <p className="eyebrow">Design system</p>
-            <h2 className="text-3xl font-bold text-white">React primitives ready to share</h2>
-            <p className="text-neutral-300">
-              Buttons, badges, inputs, modals, and accordions live in <code>/design-system</code> so every page can reuse the same
-              patterns.
+          <Card tone="accent">
+            <p className="text-sm text-emerald-100">Design tokens reused</p>
+            <p className="text-xl font-semibold text-white">
+              Colors, fonts, spacing, and shadows are pulled straight from the root Tailwind config to keep experiences
+              consistent.
             </p>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="info">Tokens synced</Badge>
-              <Badge variant="success">Keyboard friendly</Badge>
-              <Badge variant="neutral">ARIA labels</Badge>
-            </div>
+            <p className="mt-3 text-sm text-emerald-50">
+              Perfect for building Netlify-friendly demos or feature experiments without duplicating theme setup.
+            </p>
+          </Card>
+        </section>
+
+        <section id="components" className="space-y-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Reusable primitives</p>
+            <h2 className="text-3xl font-bold text-white">Buttons and cards</h2>
+            <p className="text-neutral-300">Mix and match the variants to cover primary actions, ghost links, or informative cards.</p>
           </div>
-
-          <div className="grid gap-4 lg:grid-cols-2">
-            <Card title="Form controls" eyebrow="Inputs" footer={<span className="text-neutral-400">Includes helper text + error handling.</span>}>
-              <div className="space-y-4">
-                <Input label="Project name" placeholder="Create a memorable title" helperText="Use 4–32 characters." />
-                <Input label="Contact" type="email" placeholder="you@example.com" error="Add a valid email address." />
-                <div className="flex flex-wrap gap-3">
-                  <Button onClick={() => setInviteOpen(true)}>Open modal</Button>
-                  <Button variant="secondary">Secondary</Button>
-                  <Button variant="ghost" size="sm">
-                    Subtle action
-                  </Button>
-                </div>
-              </div>
+          <div className="grid gap-4 card-grid">
+            <Card title="Primary CTA" tone="accent">
+              <p className="mb-4 text-neutral-100">Use for high-intent actions like save, publish, or proceed.</p>
+              <Button>Primary button</Button>
             </Card>
-
-            <Card title="Expandable content" eyebrow="Accordion" footer={<span className="text-neutral-400">Single-open behavior keeps focus predictable.</span>}>
-              <Accordion items={accordionItems} />
+            <Card title="Ghost CTA" tone="default">
+              <p className="mb-4 text-neutral-200">Low-emphasis links or secondary actions pair with this ghost style.</p>
+              <Button variant="ghost">Ghost button</Button>
+            </Card>
+            <Card title="Card layout" tone="info">
+              <p className="mb-4 text-neutral-100">Cards provide padding, rounded corners, and subtle borders for content.</p>
+              <Button variant="subtle">Try the subtle button</Button>
             </Card>
           </div>
         </section>
 
-        <section id="state" className="section-shell space-y-6">
-          <div className="space-y-2">
-            <p className="eyebrow">Playground</p>
-            <h2 className="text-3xl font-bold text-white">Stateful examples</h2>
-            <p className="text-neutral-300">Use these examples as a starting point for interactive UI work.</p>
+        <section id="interactions" className="space-y-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Stateful patterns</p>
+            <h2 className="text-3xl font-bold text-white">Counter and toggle examples</h2>
+            <p className="text-neutral-300">Wire up quick prototypes that showcase client-side state and accessible controls.</p>
           </div>
-          <div className="grid gap-4 lg:grid-cols-2">
-            <CounterCard />
-            <ToggleCard />
+          <CounterPanel />
+        </section>
+
+        <section id="guidance" className="space-y-5">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Implementation notes</p>
+            <h2 className="text-3xl font-bold text-white">Netlify-ready build output</h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Card title="Tailwind reuse" tone="default">
+              <p>
+                The app imports the root <code>tailwind.config.js</code> so spacing, colors, and fonts stay synchronized with the
+                rest of the site.
+              </p>
+            </Card>
+            <Card title="Vite + React" tone="accent">
+              <p>
+                Run <code>npm run build</code> inside <code>/react-demo</code> to emit production assets to
+                <code>/react-demo/dist</code>, ready for Netlify.
+              </p>
+            </Card>
           </div>
         </section>
       </main>
-
-      <Modal
-        open={inviteOpen}
-        onClose={() => setInviteOpen(false)}
-        title="Invite a collaborator"
-        description="Shared components keep your modal layout and labels consistent."
-      >
-        <div className="space-y-4">
-          <Input label="Email" type="email" placeholder="person@domain.com" />
-          <div className="flex justify-end gap-2">
-            <Button variant="ghost" onClick={() => setInviteOpen(false)}>
-              Cancel
-            </Button>
-            <Button onClick={() => setInviteOpen(false)}>Send invite</Button>
-          </div>
-        </div>
-      </Modal>
     </div>
   );
 }
