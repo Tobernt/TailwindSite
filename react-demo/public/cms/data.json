@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "feature-library",
+      "title": "Composable UI library",
+      "description": "Design tokens, spacing, and typography stay in sync with the portfolio Tailwind config.",
+      "category": "Design system",
+      "image": "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80",
+      "updated": "2 days ago",
+      "cta": "Live"
+    },
+    {
+      "id": "automation",
+      "title": "Workflow automation",
+      "description": "Publish JSON once and let the frontend hydrate cards without a rebuild cycle.",
+      "category": "Content ops",
+      "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
+      "updated": "5 hours ago",
+      "cta": "Synced"
+    },
+    {
+      "id": "analytics",
+      "title": "Engagement analytics",
+      "description": "Track how CMS-powered modules perform across landing pages and experiments.",
+      "category": "Insights",
+      "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80&sat=-20",
+      "updated": "Today",
+      "cta": "New"
+    }
+  ]
+}
