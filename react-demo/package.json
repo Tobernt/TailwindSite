@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:next-pages": "node next-style-pages/scripts/build-static-pages.js"
   },
   "dependencies": {
     "react": "^18.3.1",
