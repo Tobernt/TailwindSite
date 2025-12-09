@@ -4,6 +4,7 @@ import CmsDemoPage from './pages/CmsDemoPage';
 import AuthDemoPage from './pages/AuthDemoPage';
 import GraphqlDemoPage from './pages/GraphqlDemoPage';
 import HomePage from './pages/HomePage';
+import DesignSystemPage from './pages/DesignSystemPage';
 
 function AppLayout({ children }) {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="cms-demo" element={<CmsDemoPage />} />
           <Route path="graphql-demo" element={<GraphqlDemoPage />} />
           <Route path="auth-demo" element={<AuthDemoPage />} />
+          <Route path="design-system" element={<DesignSystemPage />} />
         </Routes>
       </AppLayout>
     </BrowserRouter>
