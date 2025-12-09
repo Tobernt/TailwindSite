@@ -8,7 +8,10 @@
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --watch",
-    "build": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --minify",
+    "build": "npm run build:styles && npm run build:react-demo",
+    "build:styles": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --minify",
+    "build:react-demo": "npm run build --prefix react-demo && npm run sync:react-demo",
+    "sync:react-demo": "mkdir -p react-demo/assets && cp -r react-demo/dist/assets/* react-demo/assets/",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "serve:test": "http-server -p 4173 .",
