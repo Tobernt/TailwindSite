@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 const links = [
-  { href: '#components', label: 'Components' },
-  { href: '#interactions', label: 'Interactions' },
-  { href: '#guidance', label: 'Guidance' },
+  { href: '/', label: 'Home' },
+  { href: '/cms-demo', label: 'CMS Demo' },
+  { href: '/#components', label: 'Components' },
+  { href: '/#interactions', label: 'Interactions' },
+  { href: '/#guidance', label: 'Guidance' },
 ];
 
 export function Navbar() {
@@ -21,9 +24,9 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-20 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a className="text-lg font-semibold text-white" href="/" aria-label="Back to portfolio home">
+        <Link className="text-lg font-semibold text-white" to="/" aria-label="Back to portfolio home" onClick={() => setIsOpen(false)}>
           Tailwind React Demo
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -44,17 +47,17 @@ export function Navbar() {
         >
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 className="inline-flex items-center rounded-full px-3 py-2 text-neutral-200 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="lg:ml-2">
-            <Button as="a" href="https://vitejs.dev" variant="primary" className="shadow-none">
+            <Button as="a" href="https://vitejs.dev" variant="primary" className="shadow-none" target="_blank" rel="noreferrer">
               Vite Docs
             </Button>
           </li>
