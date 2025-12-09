@@ -40,3 +40,14 @@
   for = "/gallery.html"
   [headers.values]
     Link = "</assets/styles.css>; rel=preload; as=style"
+
+[context.deploy-preview]
+  command = "npm run build"
+
+[[context.deploy-preview.plugins]]
+  package = "netlify-plugin-cypress"
+  [context.deploy-preview.plugins.inputs]
+    record = false
+    spec = "cypress/e2e/gallery.cy.js"
+    configFile = "cypress.config.js"
+    quiet = true
