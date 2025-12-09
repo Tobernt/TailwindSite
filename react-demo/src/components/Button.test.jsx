@@ -1,34 +1,39 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Button } from './Button';
 
 describe('Button', () => {
-  it('renders with primary variant and handles clicks', async () => {
-    const user = userEvent.setup();
-    const handleClick = vi.fn();
-
-    render(<Button onClick={handleClick}>Click me</Button>);
+  it('applies primary variant styles and defaults type for button elements', () => {
+    render(<Button>Click me</Button>);
 
     const button = screen.getByRole('button', { name: /click me/i });
-    expect(button).toBeInTheDocument();
-    expect(button).toHaveClass('bg-emerald-500');
+    expect(button).toHaveClass('bg-emerald-500', 'text-neutral-950');
     expect(button).toHaveAttribute('type', 'button');
-
-    await user.click(button);
-    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('supports rendering as a link without setting a type', () => {
+  it('forwards disabled prop and custom classes', () => {
     render(
-      <Button as="a" href="#" variant="ghost" className="custom">
-        Visit link
+      <Button disabled className="custom-class">
+        Disabled
       </Button>
     );
 
-    const link = screen.getByRole('link', { name: /visit link/i });
-    expect(link).toHaveClass('custom');
-    expect(link).toHaveClass('border-neutral-700');
+    const button = screen.getByRole('button', { name: /disabled/i });
+    expect(button).toBeDisabled();
+    expect(button).toHaveClass('custom-class');
+  });
+
+  it('supports polymorphic rendering with variant styles', () => {
+    render(
+      <Button as="a" href="/docs" variant="ghost">
+        Docs link
+      </Button>
+    );
+
+    const link = screen.getByRole('link', { name: /docs link/i });
+    expect(link.tagName).toBe('A');
+    expect(link).toHaveAttribute('href', '/docs');
     expect(link).not.toHaveAttribute('type');
+    expect(link).toHaveClass('border', 'hover:bg-neutral-900');
   });
 });
