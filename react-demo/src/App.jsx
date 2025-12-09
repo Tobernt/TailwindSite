@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
-import Button from './components/Button.jsx';
-import Card from './components/Card.jsx';
+import { Accordion, Badge, Button, Card, Input, Modal } from '../../design-system';
 import Navbar from './components/Navbar.jsx';
 
 function Stat({ label, value }) {
@@ -57,6 +56,7 @@ function ToggleCard() {
 }
 
 export default function App() {
+  const [inviteOpen, setInviteOpen] = useState(false);
   const highlights = useMemo(
     () => [
       {
@@ -70,6 +70,27 @@ export default function App() {
       {
         title: 'State playground',
         body: 'Counters and toggles demonstrate a simple React + Tailwind flow without extra dependencies.',
+      },
+    ],
+    []
+  );
+
+  const accordionItems = useMemo(
+    () => [
+      {
+        id: 'tokens',
+        title: 'Shared tokens',
+        content: 'Spacing, fonts, and colors flow from the Tailwind preset used across the site.',
+      },
+      {
+        id: 'accessibility',
+        title: 'Built for accessibility',
+        content: 'Each primitive ships with sensible aria attributes, keyboard support, and focus outlines.',
+      },
+      {
+        id: 'composition',
+        title: 'Composable React APIs',
+        content: 'Use props like as, variant, and size to adapt components without rewriting styles.',
       },
     ],
     []
@@ -146,6 +167,42 @@ export default function App() {
           </div>
         </section>
 
+        <section id="design-system" className="section-shell space-y-6">
+          <div className="space-y-2">
+            <p className="eyebrow">Design system</p>
+            <h2 className="text-3xl font-bold text-white">React primitives ready to share</h2>
+            <p className="text-neutral-300">
+              Buttons, badges, inputs, modals, and accordions live in <code>/design-system</code> so every page can reuse the same
+              patterns.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="info">Tokens synced</Badge>
+              <Badge variant="success">Keyboard friendly</Badge>
+              <Badge variant="neutral">ARIA labels</Badge>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            <Card title="Form controls" eyebrow="Inputs" footer={<span className="text-neutral-400">Includes helper text + error handling.</span>}>
+              <div className="space-y-4">
+                <Input label="Project name" placeholder="Create a memorable title" helperText="Use 4–32 characters." />
+                <Input label="Contact" type="email" placeholder="you@example.com" error="Add a valid email address." />
+                <div className="flex flex-wrap gap-3">
+                  <Button onClick={() => setInviteOpen(true)}>Open modal</Button>
+                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="ghost" size="sm">
+                    Subtle action
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            <Card title="Expandable content" eyebrow="Accordion" footer={<span className="text-neutral-400">Single-open behavior keeps focus predictable.</span>}>
+              <Accordion items={accordionItems} />
+            </Card>
+          </div>
+        </section>
+
         <section id="state" className="section-shell space-y-6">
           <div className="space-y-2">
             <p className="eyebrow">Playground</p>
@@ -158,6 +215,23 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <Modal
+        open={inviteOpen}
+        onClose={() => setInviteOpen(false)}
+        title="Invite a collaborator"
+        description="Shared components keep your modal layout and labels consistent."
+      >
+        <div className="space-y-4">
+          <Input label="Email" type="email" placeholder="person@domain.com" />
+          <div className="flex justify-end gap-2">
+            <Button variant="ghost" onClick={() => setInviteOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => setInviteOpen(false)}>Send invite</Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

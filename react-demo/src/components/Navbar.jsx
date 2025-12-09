@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import Button from './Button.jsx';
+import { Button } from '../../../design-system';
 
 const links = [
   { href: '#hero', label: 'Overview' },
