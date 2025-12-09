@@ -50,4 +50,3 @@
     record = false
     spec = "cypress/e2e/gallery.cy.js"
     configFile = "cypress.config.js"
-    quiet = true
